@@ -1,0 +1,331 @@
+@model Library.BLL.ModelVM.Admin.DashboardVM
+@{
+    ViewData["Title"] = "Dashboard";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+
+    var monthLabels    = string.Join(",", Model.MonthlyStats.Select(m => $"\"{m.Month}\""));
+    var borrowedData   = string.Join(",", Model.MonthlyStats.Select(m => m.Borrowed));
+    var returnedData   = string.Join(",", Model.MonthlyStats.Select(m => m.Returned));
+    var catLabels      = string.Join(",", Model.CategoryStats.Select(c => $"\"{c.Category}\""));
+    var catData        = string.Join(",", Model.CategoryStats.Select(c => c.Count));
+}
+
+<!-- ── Page header ── -->
+<div class="d-flex align-items-center justify-content-between mb-4 flex-wrap gap-2">
+    <div>
+        <p class="admin-eyebrow mb-0">Overview</p>
+        <h1 class="admin-section-title">Dashboard</h1>
+    </div>
+    <div class="d-flex gap-2">
+        <a asp-controller="Book" asp-action="Index" class="btn btn-sm btn-outline-secondary">
+            <i class="bi bi-book me-1"></i>Manage Books
+        </a>
+        <span class="btn btn-sm" style="background:var(--amber-lt);color:var(--amber);font-weight:600;">
+            <i class="bi bi-calendar3 me-1"></i>@DateTime.Now.ToString("dd MMM yyyy")
+        </span>
+    </div>
+</div>
+
+<!-- ── Stat Cards ─────────────────────────────────────────────── -->
+<div class="row g-3 mb-4">
+    <div class="col-sm-6 col-xl-2">
+        <div class="stat-card">
+            <div class="stat-card-icon si-amber"><i class="bi bi-book-fill"></i></div>
+            <div class="stat-card-num">@Model.TotalBooks</div>
+            <div class="stat-card-label">Total Books</div>
+            <div class="stat-card-glow" style="background:var(--amber)"></div>
+        </div>
+    </div>
+    <div class="col-sm-6 col-xl-2">
+        <div class="stat-card">
+            <div class="stat-card-icon si-green"><i class="bi bi-layers-fill"></i></div>
+            <div class="stat-card-num">@Model.AvailableBooks</div>
+            <div class="stat-card-label">Available Copies</div>
+            <div class="stat-card-glow" style="background:var(--green)"></div>
+        </div>
+    </div>
+    <div class="col-sm-6 col-xl-2">
+        <div class="stat-card">
+            <div class="stat-card-icon si-blue"><i class="bi bi-bookmark-fill"></i></div>
+            <div class="stat-card-num">@Model.ActiveBorrowings</div>
+            <div class="stat-card-label">Active Loans</div>
+            <div class="stat-card-glow" style="background:var(--blue)"></div>
+        </div>
+    </div>
+    <div class="col-sm-6 col-xl-2">
+        <div class="stat-card">
+            <div class="stat-card-icon si-teal"><i class="bi bi-check2-circle"></i></div>
+            <div class="stat-card-num">@Model.ReturnedBooks</div>
+            <div class="stat-card-label">Returned</div>
+            <div class="stat-card-glow" style="background:#0d9488"></div>
+        </div>
+    </div>
+    <div class="col-sm-6 col-xl-2">
+        <div class="stat-card">
+            <div class="stat-card-icon si-ink"><i class="bi bi-people-fill"></i></div>
+            <div class="stat-card-num">@Model.TotalUsers</div>
+            <div class="stat-card-label">Total Users</div>
+            <div class="stat-card-glow" style="background:var(--ink)"></div>
+        </div>
+    </div>
+    <div class="col-sm-6 col-xl-2">
+        <div class="stat-card">
+            <div class="stat-card-icon si-red"><i class="bi bi-journal-bookmark-fill"></i></div>
+            <div class="stat-card-num">@Model.BorrowedBooks</div>
+            <div class="stat-card-label">All-Time Borrows</div>
+            <div class="stat-card-glow" style="background:var(--red)"></div>
+        </div>
+    </div>
+</div>
+
+<!-- ── Quick Actions ───────────────────────────────────────────── -->
+<div class="admin-card mb-4">
+    <div class="admin-card-header">
+        <h2 class="admin-card-title"><i class="bi bi-lightning-fill me-2 text-warning"></i>Quick Actions</h2>
+    </div>
+    <div class="p-3">
+        <div class="row row-cols-2 row-cols-md-3 row-cols-lg-5 g-3">
+
+            <div class="col">
+                <a class="qa-btn" asp-controller="Admin" asp-action="Borrowings">
+                    <i class="bi bi-bookmark-check-fill" style="color:var(--blue)"></i>
+                    Borrowings
+                </a>
+            </div>
+
+            <div class="col">
+                <a class="qa-btn" asp-controller="Admin" asp-action="Users">
+                    <i class="bi bi-person-plus-fill" style="color:var(--green)"></i>
+                    Users
+                </a>
+            </div>
+
+            <div class="col">
+                <a class="qa-btn"
+                       asp-controller="Admin"
+                       asp-action="Borrowings"
+                       asp-route-filterReturned="false">
+                    <i class="bi bi-clock-history" style="color:var(--red)"></i>
+                    Active Loans
+                </a>
+            </div>
+
+            <div class="col">
+                <a class="qa-btn"
+                       asp-controller="Library"
+                       asp-action="Index">
+                    <i class="bi bi-eye-fill" style="color:#0d9488"></i>
+                    View Library
+                </a>
+            </div>
+
+            <div class="col">
+                <a class="qa-btn"
+                       asp-controller="Book"
+                       asp-action="Index">
+                    <i class="bi bi-table" style="color:var(--muted)"></i>
+                    All Books
+                </a>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<!-- ── Charts Row ──────────────────────────────────────────────── -->
+<div class="row g-3 mb-4">
+    <!-- Line chart: Monthly borrows -->
+    <div class="col-lg-8">
+        <div class="admin-card h-100">
+            <div class="admin-card-header">
+                <h2 class="admin-card-title"><i class="bi bi-bar-chart-line me-2" style="color:var(--amber)"></i>Borrowing Activity</h2>
+                <span style="font-size:.75rem;color:var(--muted)">Last 6 months</span>
+            </div>
+            <div class="p-3" style="height:280px">
+                <canvas id="borrowChart"></canvas>
+            </div>
+        </div>
+    </div>
+    <!-- Doughnut chart: Categories -->
+    <div class="col-lg-4">
+        <div class="admin-card h-100">
+            <div class="admin-card-header">
+                <h2 class="admin-card-title"><i class="bi bi-pie-chart me-2" style="color:var(--green)"></i>By Category</h2>
+            </div>
+            <div class="p-3 d-flex align-items-center justify-content-center" style="height:280px">
+                <canvas id="catChart"></canvas>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- ── Bottom Row: Recent Books + Recent Borrowings ──────────────── -->
+<div class="row g-3">
+    <!-- Recent Books -->
+    <div class="col-lg-6">
+        <div class="admin-card">
+            <div class="admin-card-header">
+                <h2 class="admin-card-title"><i class="bi bi-clock-history me-2" style="color:var(--amber)"></i>Recently Added Books</h2>
+                <a asp-controller="Book" asp-action="Index" style="font-size:.8rem;color:var(--amber);font-weight:600;text-decoration:none;">See all</a>
+            </div>
+            <div class="table-responsive">
+                <table class="admin-table">
+                    <thead>
+                        <tr>
+                            <th style="width:50px">Cover</th>
+                            <th>Title</th>
+                            <th>Category</th>
+                            <th class="text-center">Qty</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @if (!Model.RecentBooks.Any())
+                        {
+                            <tr><td colspan="4" class="text-center text-muted py-4">No books yet</td></tr>
+                        }
+                        @foreach (var book in Model.RecentBooks)
+                        {
+                            <tr>
+                                <td>
+                                    @if (!string.IsNullOrEmpty(book.ImagePath))
+                                    { <img src="~/files/@book.ImagePath" class="row-thumb" alt="@book.Title" /> }
+                                    else
+                                    { <div class="row-thumb-ph"><i class="bi bi-book"></i></div> }
+                                </td>
+                                <td>
+                                    <div class="fw-semibold" style="font-size:.875rem">@book.Title</div>
+                                    <div style="font-size:.76rem;color:var(--muted)">@book.Author</div>
+                                </td>
+                                <td>
+                                    <span class="badge-active" style="font-size:.68rem">@book.Category</span>
+                                </td>
+                                <td class="text-center">
+                                    <span class="@(book.Quantity == 0 ? "badge-late" : book.Quantity <= 2 ? "badge-active" : "badge-returned")"
+                                          style="font-size:.72rem">
+                                        @book.Quantity
+                                    </span>
+                                </td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <!-- Recent Borrowings -->
+    <div class="col-lg-6">
+        <div class="admin-card">
+            <div class="admin-card-header">
+                <h2 class="admin-card-title"><i class="bi bi-bookmark-check me-2" style="color:var(--green)"></i>Recent Borrowing Activity</h2>
+                <a asp-controller="Admin" asp-action="Borrowings" style="font-size:.8rem;color:var(--amber);font-weight:600;text-decoration:none;">See all</a>
+            </div>
+            <div class="table-responsive">
+                <table class="admin-table">
+                    <thead>
+                        <tr>
+                            <th>Book / User</th>
+                            <th>Borrowed</th>
+                            <th class="text-center">Status</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @if (!Model.RecentBorrowings.Any())
+                        {
+                            <tr><td colspan="3" class="text-center text-muted py-4">No activity yet</td></tr>
+                        }
+                        @foreach (var b in Model.RecentBorrowings)
+                        {
+                            <tr>
+                                <td>
+                                    <div class="fw-semibold" style="font-size:.875rem">@b.BookTitle</div>
+                                    <div style="font-size:.76rem;color:var(--muted)">
+                                        <i class="bi bi-person me-1"></i>@b.UserName
+                                    </div>
+                                </td>
+                                <td style="font-size:.8rem;color:var(--muted)">
+                                    @b.BorrowDate.ToString("dd MMM yy")
+                                </td>
+                                <td class="text-center">
+                                    @if (b.IsReturned)
+                                    { <span class="badge-returned">Returned</span> }
+                                    else
+                                    { <span class="badge-active">Active</span> }
+                                </td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+<script>
+// ── Borrow Line Chart ──────────────────────────────────────────
+(function() {
+    const ctx = document.getElementById('borrowChart');
+    if (!ctx) return;
+    new Chart(ctx, {
+        type: 'line',
+        data: {
+            labels: [@Html.Raw(monthLabels)],
+            datasets: [
+                {
+                    label: 'Borrowed',
+                    data: [@borrowedData],
+                    borderColor: '#c9813a',
+                    backgroundColor: 'rgba(201,129,58,.1)',
+                    tension: .4, fill: true,
+                    pointBackgroundColor: '#c9813a', pointRadius: 4
+                },
+                {
+                    label: 'Returned',
+                    data: [@returnedData],
+                    borderColor: '#2d7a4f',
+                    backgroundColor: 'rgba(45,122,79,.08)',
+                    tension: .4, fill: true,
+                    pointBackgroundColor: '#2d7a4f', pointRadius: 4
+                }
+            ]
+        },
+        options: {
+            responsive: true, maintainAspectRatio: false,
+            plugins: { legend: { position: 'top', labels: { font: { family: 'DM Sans', size: 12 }, color: '#6b5f54', boxWidth: 12 } } },
+            scales: {
+                x: { grid: { color: '#f5ede4' }, ticks: { color: '#7a6e62', font: { family: 'DM Sans' } } },
+                y: { grid: { color: '#f5ede4' }, ticks: { color: '#7a6e62', font: { family: 'DM Sans' }, stepSize: 1 }, beginAtZero: true }
+            }
+        }
+    });
+})();
+
+// ── Category Doughnut ──────────────────────────────────────────
+(function() {
+    const ctx = document.getElementById('catChart');
+    if (!ctx) return;
+    new Chart(ctx, {
+        type: 'doughnut',
+        data: {
+            labels: [@Html.Raw(catLabels)],
+            datasets: [{
+                data: [@catData],
+                backgroundColor: ['#c9813a','#2d7a4f','#1d4ed8','#dc2626','#0d9488','#7c3aed','#b45309'],
+                borderWidth: 2, borderColor: '#fff'
+            }]
+        },
+        options: {
+            responsive: true, maintainAspectRatio: false,
+            cutout: '62%',
+            plugins: {
+                legend: {
+                    position: 'bottom',
+                    labels: { font: { family: 'DM Sans', size: 11 }, color: '#6b5f54', boxWidth: 10, padding: 10 }
+                }
+            }
+        }
+    });
+})();
+</script>
+}

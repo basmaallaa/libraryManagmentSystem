@@ -1,0 +1,1124 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "D:\\ITILab\\MVC\\LibraryManagmentSystem\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{6AC27020-6BF2-20DA-77AB-94F74C3BE183}|Library.PL\\Library.PL.csproj|d:\\itilab\\mvc\\librarymanagmentsystem\\library.pl\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{6AC27020-6BF2-20DA-77AB-94F74C3BE183}|Library.PL\\Library.PL.csproj|solutionrelative:library.pl\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6AC27020-6BF2-20DA-77AB-94F74C3BE183}|Library.PL\\Library.PL.csproj|d:\\itilab\\mvc\\librarymanagmentsystem\\library.pl\\views\\book\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{6AC27020-6BF2-20DA-77AB-94F74C3BE183}|Library.PL\\Library.PL.csproj|solutionrelative:library.pl\\views\\book\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6AC27020-6BF2-20DA-77AB-94F74C3BE183}|Library.PL\\Library.PL.csproj|d:\\itilab\\mvc\\librarymanagmentsystem\\library.pl\\views\\library\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{6AC27020-6BF2-20DA-77AB-94F74C3BE183}|Library.PL\\Library.PL.csproj|solutionrelative:library.pl\\views\\library\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6AC27020-6BF2-20DA-77AB-94F74C3BE183}|Library.PL\\Library.PL.csproj|d:\\itilab\\mvc\\librarymanagmentsystem\\library.pl\\views\\library\\myborrowedbooks.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{6AC27020-6BF2-20DA-77AB-94F74C3BE183}|Library.PL\\Library.PL.csproj|solutionrelative:library.pl\\views\\library\\myborrowedbooks.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6AC27020-6BF2-20DA-77AB-94F74C3BE183}|Library.PL\\Library.PL.csproj|d:\\itilab\\mvc\\librarymanagmentsystem\\library.pl\\views\\shared\\_adminlayout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{6AC27020-6BF2-20DA-77AB-94F74C3BE183}|Library.PL\\Library.PL.csproj|solutionrelative:library.pl\\views\\shared\\_adminlayout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6AC27020-6BF2-20DA-77AB-94F74C3BE183}|Library.PL\\Library.PL.csproj|d:\\itilab\\mvc\\librarymanagmentsystem\\library.pl\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{6AC27020-6BF2-20DA-77AB-94F74C3BE183}|Library.PL\\Library.PL.csproj|solutionrelative:library.pl\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6AC27020-6BF2-20DA-77AB-94F74C3BE183}|Library.PL\\Library.PL.csproj|d:\\itilab\\mvc\\librarymanagmentsystem\\library.pl\\views\\admin\\dashboard.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{6AC27020-6BF2-20DA-77AB-94F74C3BE183}|Library.PL\\Library.PL.csproj|solutionrelative:library.pl\\views\\admin\\dashboard.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6AC27020-6BF2-20DA-77AB-94F74C3BE183}|Library.PL\\Library.PL.csproj|d:\\itilab\\mvc\\librarymanagmentsystem\\library.pl\\views\\admin\\users.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{6AC27020-6BF2-20DA-77AB-94F74C3BE183}|Library.PL\\Library.PL.csproj|solutionrelative:library.pl\\views\\admin\\users.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6AC27020-6BF2-20DA-77AB-94F74C3BE183}|Library.PL\\Library.PL.csproj|d:\\itilab\\mvc\\librarymanagmentsystem\\library.pl\\views\\book\\_addbookpartial.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{6AC27020-6BF2-20DA-77AB-94F74C3BE183}|Library.PL\\Library.PL.csproj|solutionrelative:library.pl\\views\\book\\_addbookpartial.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6AC27020-6BF2-20DA-77AB-94F74C3BE183}|Library.PL\\Library.PL.csproj|d:\\itilab\\mvc\\librarymanagmentsystem\\library.pl\\views\\book\\_detailsbookpartial.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{6AC27020-6BF2-20DA-77AB-94F74C3BE183}|Library.PL\\Library.PL.csproj|solutionrelative:library.pl\\views\\book\\_detailsbookpartial.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6AC27020-6BF2-20DA-77AB-94F74C3BE183}|Library.PL\\Library.PL.csproj|d:\\itilab\\mvc\\librarymanagmentsystem\\library.pl\\views\\admin\\borrowings.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{6AC27020-6BF2-20DA-77AB-94F74C3BE183}|Library.PL\\Library.PL.csproj|solutionrelative:library.pl\\views\\admin\\borrowings.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6AC27020-6BF2-20DA-77AB-94F74C3BE183}|Library.PL\\Library.PL.csproj|d:\\itilab\\mvc\\librarymanagmentsystem\\library.pl\\wwwroot\\css\\books-module.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
+      "RelativeMoniker": "D:0:0:{6AC27020-6BF2-20DA-77AB-94F74C3BE183}|Library.PL\\Library.PL.csproj|solutionrelative:library.pl\\wwwroot\\css\\books-module.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6AC27020-6BF2-20DA-77AB-94F74C3BE183}|Library.PL\\Library.PL.csproj|d:\\itilab\\mvc\\librarymanagmentsystem\\library.pl\\wwwroot\\css\\site.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
+      "RelativeMoniker": "D:0:0:{6AC27020-6BF2-20DA-77AB-94F74C3BE183}|Library.PL\\Library.PL.csproj|solutionrelative:library.pl\\wwwroot\\css\\site.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6AC27020-6BF2-20DA-77AB-94F74C3BE183}|Library.PL\\Library.PL.csproj|d:\\itilab\\mvc\\librarymanagmentsystem\\library.pl\\controllers\\bookcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6AC27020-6BF2-20DA-77AB-94F74C3BE183}|Library.PL\\Library.PL.csproj|solutionrelative:library.pl\\controllers\\bookcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6AC27020-6BF2-20DA-77AB-94F74C3BE183}|Library.PL\\Library.PL.csproj|d:\\itilab\\mvc\\librarymanagmentsystem\\library.pl\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6AC27020-6BF2-20DA-77AB-94F74C3BE183}|Library.PL\\Library.PL.csproj|solutionrelative:library.pl\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9ADBE351-8004-47B7-B7D1-AAC3AC0B4CEA}|Library.DAL\\Library.DAL.csproj|d:\\itilab\\mvc\\librarymanagmentsystem\\library.dal\\context\\applicationdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9ADBE351-8004-47B7-B7D1-AAC3AC0B4CEA}|Library.DAL\\Library.DAL.csproj|solutionrelative:library.dal\\context\\applicationdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6AC27020-6BF2-20DA-77AB-94F74C3BE183}|Library.PL\\Library.PL.csproj|d:\\itilab\\mvc\\librarymanagmentsystem\\library.pl\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{6AC27020-6BF2-20DA-77AB-94F74C3BE183}|Library.PL\\Library.PL.csproj|solutionrelative:library.pl\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6AC27020-6BF2-20DA-77AB-94F74C3BE183}|Library.PL\\Library.PL.csproj|d:\\itilab\\mvc\\librarymanagmentsystem\\library.pl\\controllers\\authcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6AC27020-6BF2-20DA-77AB-94F74C3BE183}|Library.PL\\Library.PL.csproj|solutionrelative:library.pl\\controllers\\authcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{93A450F4-AE55-4A2B-AF3C-CD5BAE9EEE08}|Library.BLL\\Library.BLL.csproj|d:\\itilab\\mvc\\librarymanagmentsystem\\library.bll\\services\\implementations\\authservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{93A450F4-AE55-4A2B-AF3C-CD5BAE9EEE08}|Library.BLL\\Library.BLL.csproj|solutionrelative:library.bll\\services\\implementations\\authservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{93A450F4-AE55-4A2B-AF3C-CD5BAE9EEE08}|Library.BLL\\Library.BLL.csproj|d:\\itilab\\mvc\\librarymanagmentsystem\\library.bll\\services\\implementations\\adminservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{93A450F4-AE55-4A2B-AF3C-CD5BAE9EEE08}|Library.BLL\\Library.BLL.csproj|solutionrelative:library.bll\\services\\implementations\\adminservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6AC27020-6BF2-20DA-77AB-94F74C3BE183}|Library.PL\\Library.PL.csproj|d:\\itilab\\mvc\\librarymanagmentsystem\\library.pl\\views\\admin\\_pendingreturnspartial.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{6AC27020-6BF2-20DA-77AB-94F74C3BE183}|Library.PL\\Library.PL.csproj|solutionrelative:library.pl\\views\\admin\\_pendingreturnspartial.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6AC27020-6BF2-20DA-77AB-94F74C3BE183}|Library.PL\\Library.PL.csproj|d:\\itilab\\mvc\\librarymanagmentsystem\\library.pl\\controllers\\admincontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6AC27020-6BF2-20DA-77AB-94F74C3BE183}|Library.PL\\Library.PL.csproj|solutionrelative:library.pl\\controllers\\admincontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6AC27020-6BF2-20DA-77AB-94F74C3BE183}|Library.PL\\Library.PL.csproj|d:\\itilab\\mvc\\librarymanagmentsystem\\library.pl\\controllers\\borrowcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6AC27020-6BF2-20DA-77AB-94F74C3BE183}|Library.PL\\Library.PL.csproj|solutionrelative:library.pl\\controllers\\borrowcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6AC27020-6BF2-20DA-77AB-94F74C3BE183}|Library.PL\\Library.PL.csproj|d:\\itilab\\mvc\\librarymanagmentsystem\\library.pl\\library.pl.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{6AC27020-6BF2-20DA-77AB-94F74C3BE183}|Library.PL\\Library.PL.csproj|solutionrelative:library.pl\\library.pl.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{93A450F4-AE55-4A2B-AF3C-CD5BAE9EEE08}|Library.BLL\\Library.BLL.csproj|d:\\itilab\\mvc\\librarymanagmentsystem\\library.bll\\library.bll.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{93A450F4-AE55-4A2B-AF3C-CD5BAE9EEE08}|Library.BLL\\Library.BLL.csproj|solutionrelative:library.bll\\library.bll.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{93A450F4-AE55-4A2B-AF3C-CD5BAE9EEE08}|Library.BLL\\Library.BLL.csproj|d:\\itilab\\mvc\\librarymanagmentsystem\\library.bll\\helper\\filehelper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{93A450F4-AE55-4A2B-AF3C-CD5BAE9EEE08}|Library.BLL\\Library.BLL.csproj|solutionrelative:library.bll\\helper\\filehelper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{93A450F4-AE55-4A2B-AF3C-CD5BAE9EEE08}|Library.BLL\\Library.BLL.csproj|d:\\itilab\\mvc\\librarymanagmentsystem\\library.bll\\services\\implementations\\borrowservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{93A450F4-AE55-4A2B-AF3C-CD5BAE9EEE08}|Library.BLL\\Library.BLL.csproj|solutionrelative:library.bll\\services\\implementations\\borrowservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6AC27020-6BF2-20DA-77AB-94F74C3BE183}|Library.PL\\Library.PL.csproj|d:\\itilab\\mvc\\librarymanagmentsystem\\library.pl\\controllers\\librarycontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6AC27020-6BF2-20DA-77AB-94F74C3BE183}|Library.PL\\Library.PL.csproj|solutionrelative:library.pl\\controllers\\librarycontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{93A450F4-AE55-4A2B-AF3C-CD5BAE9EEE08}|Library.BLL\\Library.BLL.csproj|d:\\itilab\\mvc\\librarymanagmentsystem\\library.bll\\services\\interfaces\\iadminservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{93A450F4-AE55-4A2B-AF3C-CD5BAE9EEE08}|Library.BLL\\Library.BLL.csproj|solutionrelative:library.bll\\services\\interfaces\\iadminservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{93A450F4-AE55-4A2B-AF3C-CD5BAE9EEE08}|Library.BLL\\Library.BLL.csproj|d:\\itilab\\mvc\\librarymanagmentsystem\\library.bll\\services\\interfaces\\iborrowservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{93A450F4-AE55-4A2B-AF3C-CD5BAE9EEE08}|Library.BLL\\Library.BLL.csproj|solutionrelative:library.bll\\services\\interfaces\\iborrowservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{93A450F4-AE55-4A2B-AF3C-CD5BAE9EEE08}|Library.BLL\\Library.BLL.csproj|d:\\itilab\\mvc\\librarymanagmentsystem\\library.bll\\modelvm\\borrow\\pendingreturnvm.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{93A450F4-AE55-4A2B-AF3C-CD5BAE9EEE08}|Library.BLL\\Library.BLL.csproj|solutionrelative:library.bll\\modelvm\\borrow\\pendingreturnvm.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{93A450F4-AE55-4A2B-AF3C-CD5BAE9EEE08}|Library.BLL\\Library.BLL.csproj|d:\\itilab\\mvc\\librarymanagmentsystem\\library.bll\\modelvm\\borrow\\borrowedbookvm.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{93A450F4-AE55-4A2B-AF3C-CD5BAE9EEE08}|Library.BLL\\Library.BLL.csproj|solutionrelative:library.bll\\modelvm\\borrow\\borrowedbookvm.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9ADBE351-8004-47B7-B7D1-AAC3AC0B4CEA}|Library.DAL\\Library.DAL.csproj|d:\\itilab\\mvc\\librarymanagmentsystem\\library.dal\\models\\borrowrecord.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9ADBE351-8004-47B7-B7D1-AAC3AC0B4CEA}|Library.DAL\\Library.DAL.csproj|solutionrelative:library.dal\\models\\borrowrecord.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6AC27020-6BF2-20DA-77AB-94F74C3BE183}|Library.PL\\Library.PL.csproj|d:\\itilab\\mvc\\librarymanagmentsystem\\library.pl\\views\\auth\\register.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{6AC27020-6BF2-20DA-77AB-94F74C3BE183}|Library.PL\\Library.PL.csproj|solutionrelative:library.pl\\views\\auth\\register.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6AC27020-6BF2-20DA-77AB-94F74C3BE183}|Library.PL\\Library.PL.csproj|d:\\itilab\\mvc\\librarymanagmentsystem\\library.pl\\views\\auth\\login.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{6AC27020-6BF2-20DA-77AB-94F74C3BE183}|Library.PL\\Library.PL.csproj|solutionrelative:library.pl\\views\\auth\\login.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6AC27020-6BF2-20DA-77AB-94F74C3BE183}|Library.PL\\Library.PL.csproj|d:\\itilab\\mvc\\librarymanagmentsystem\\library.pl\\views\\shared\\_authlayout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{6AC27020-6BF2-20DA-77AB-94F74C3BE183}|Library.PL\\Library.PL.csproj|solutionrelative:library.pl\\views\\shared\\_authlayout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{93A450F4-AE55-4A2B-AF3C-CD5BAE9EEE08}|Library.BLL\\Library.BLL.csproj|d:\\itilab\\mvc\\librarymanagmentsystem\\library.bll\\mapping\\mappingprofile.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{93A450F4-AE55-4A2B-AF3C-CD5BAE9EEE08}|Library.BLL\\Library.BLL.csproj|solutionrelative:library.bll\\mapping\\mappingprofile.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{93A450F4-AE55-4A2B-AF3C-CD5BAE9EEE08}|Library.BLL\\Library.BLL.csproj|d:\\itilab\\mvc\\librarymanagmentsystem\\library.bll\\modelvm\\admin\\dashboardvm.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{93A450F4-AE55-4A2B-AF3C-CD5BAE9EEE08}|Library.BLL\\Library.BLL.csproj|solutionrelative:library.bll\\modelvm\\admin\\dashboardvm.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{93A450F4-AE55-4A2B-AF3C-CD5BAE9EEE08}|Library.BLL\\Library.BLL.csproj|d:\\itilab\\mvc\\librarymanagmentsystem\\library.bll\\modelvm\\admin\\borrowrecordlistvm.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{93A450F4-AE55-4A2B-AF3C-CD5BAE9EEE08}|Library.BLL\\Library.BLL.csproj|solutionrelative:library.bll\\modelvm\\admin\\borrowrecordlistvm.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{93A450F4-AE55-4A2B-AF3C-CD5BAE9EEE08}|Library.BLL\\Library.BLL.csproj|d:\\itilab\\mvc\\librarymanagmentsystem\\library.bll\\modelvm\\admin\\userlistvm.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{93A450F4-AE55-4A2B-AF3C-CD5BAE9EEE08}|Library.BLL\\Library.BLL.csproj|solutionrelative:library.bll\\modelvm\\admin\\userlistvm.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6AC27020-6BF2-20DA-77AB-94F74C3BE183}|Library.PL\\Library.PL.csproj|d:\\itilab\\mvc\\librarymanagmentsystem\\library.pl\\views\\_viewimports.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{6AC27020-6BF2-20DA-77AB-94F74C3BE183}|Library.PL\\Library.PL.csproj|solutionrelative:library.pl\\views\\_viewimports.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9ADBE351-8004-47B7-B7D1-AAC3AC0B4CEA}|Library.DAL\\Library.DAL.csproj|d:\\itilab\\mvc\\librarymanagmentsystem\\library.dal\\models\\applicationuser.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9ADBE351-8004-47B7-B7D1-AAC3AC0B4CEA}|Library.DAL\\Library.DAL.csproj|solutionrelative:library.dal\\models\\applicationuser.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9ADBE351-8004-47B7-B7D1-AAC3AC0B4CEA}|Library.DAL\\Library.DAL.csproj|d:\\itilab\\mvc\\librarymanagmentsystem\\library.dal\\models\\book.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9ADBE351-8004-47B7-B7D1-AAC3AC0B4CEA}|Library.DAL\\Library.DAL.csproj|solutionrelative:library.dal\\models\\book.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6AC27020-6BF2-20DA-77AB-94F74C3BE183}|Library.PL\\Library.PL.csproj|d:\\itilab\\mvc\\librarymanagmentsystem\\library.pl\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6AC27020-6BF2-20DA-77AB-94F74C3BE183}|Library.PL\\Library.PL.csproj|solutionrelative:library.pl\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9ADBE351-8004-47B7-B7D1-AAC3AC0B4CEA}|Library.DAL\\Library.DAL.csproj|d:\\itilab\\mvc\\librarymanagmentsystem\\library.dal\\enums\\category.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9ADBE351-8004-47B7-B7D1-AAC3AC0B4CEA}|Library.DAL\\Library.DAL.csproj|solutionrelative:library.dal\\enums\\category.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9ADBE351-8004-47B7-B7D1-AAC3AC0B4CEA}|Library.DAL\\Library.DAL.csproj|d:\\itilab\\mvc\\librarymanagmentsystem\\library.dal\\seed\\dbinitializer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9ADBE351-8004-47B7-B7D1-AAC3AC0B4CEA}|Library.DAL\\Library.DAL.csproj|solutionrelative:library.dal\\seed\\dbinitializer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{93A450F4-AE55-4A2B-AF3C-CD5BAE9EEE08}|Library.BLL\\Library.BLL.csproj|d:\\itilab\\mvc\\librarymanagmentsystem\\library.bll\\services\\implementations\\libraryservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{93A450F4-AE55-4A2B-AF3C-CD5BAE9EEE08}|Library.BLL\\Library.BLL.csproj|solutionrelative:library.bll\\services\\implementations\\libraryservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{93A450F4-AE55-4A2B-AF3C-CD5BAE9EEE08}|Library.BLL\\Library.BLL.csproj|d:\\itilab\\mvc\\librarymanagmentsystem\\library.bll\\services\\implementations\\bookservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{93A450F4-AE55-4A2B-AF3C-CD5BAE9EEE08}|Library.BLL\\Library.BLL.csproj|solutionrelative:library.bll\\services\\implementations\\bookservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{93A450F4-AE55-4A2B-AF3C-CD5BAE9EEE08}|Library.BLL\\Library.BLL.csproj|d:\\itilab\\mvc\\librarymanagmentsystem\\library.bll\\services\\interfaces\\ilibraryservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{93A450F4-AE55-4A2B-AF3C-CD5BAE9EEE08}|Library.BLL\\Library.BLL.csproj|solutionrelative:library.bll\\services\\interfaces\\ilibraryservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{93A450F4-AE55-4A2B-AF3C-CD5BAE9EEE08}|Library.BLL\\Library.BLL.csproj|d:\\itilab\\mvc\\librarymanagmentsystem\\library.bll\\services\\interfaces\\ibookservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{93A450F4-AE55-4A2B-AF3C-CD5BAE9EEE08}|Library.BLL\\Library.BLL.csproj|solutionrelative:library.bll\\services\\interfaces\\ibookservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{93A450F4-AE55-4A2B-AF3C-CD5BAE9EEE08}|Library.BLL\\Library.BLL.csproj|d:\\itilab\\mvc\\librarymanagmentsystem\\library.bll\\modelvm\\library\\librarybooksvm.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{93A450F4-AE55-4A2B-AF3C-CD5BAE9EEE08}|Library.BLL\\Library.BLL.csproj|solutionrelative:library.bll\\modelvm\\library\\librarybooksvm.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9ADBE351-8004-47B7-B7D1-AAC3AC0B4CEA}|Library.DAL\\Library.DAL.csproj|d:\\itilab\\mvc\\librarymanagmentsystem\\library.dal\\repository\\implementations\\genericrepo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9ADBE351-8004-47B7-B7D1-AAC3AC0B4CEA}|Library.DAL\\Library.DAL.csproj|solutionrelative:library.dal\\repository\\implementations\\genericrepo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9ADBE351-8004-47B7-B7D1-AAC3AC0B4CEA}|Library.DAL\\Library.DAL.csproj|d:\\itilab\\mvc\\librarymanagmentsystem\\library.dal\\repository\\interfaces\\igenericrepo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9ADBE351-8004-47B7-B7D1-AAC3AC0B4CEA}|Library.DAL\\Library.DAL.csproj|solutionrelative:library.dal\\repository\\interfaces\\igenericrepo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{93A450F4-AE55-4A2B-AF3C-CD5BAE9EEE08}|Library.BLL\\Library.BLL.csproj|d:\\itilab\\mvc\\librarymanagmentsystem\\library.bll\\modelvm\\borrow\\borrowvm.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{93A450F4-AE55-4A2B-AF3C-CD5BAE9EEE08}|Library.BLL\\Library.BLL.csproj|solutionrelative:library.bll\\modelvm\\borrow\\borrowvm.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9ADBE351-8004-47B7-B7D1-AAC3AC0B4CEA}|Library.DAL\\Library.DAL.csproj|d:\\itilab\\mvc\\librarymanagmentsystem\\library.dal\\library.dal.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{9ADBE351-8004-47B7-B7D1-AAC3AC0B4CEA}|Library.DAL\\Library.DAL.csproj|solutionrelative:library.dal\\library.dal.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{93A450F4-AE55-4A2B-AF3C-CD5BAE9EEE08}|Library.BLL\\Library.BLL.csproj|d:\\itilab\\mvc\\librarymanagmentsystem\\library.bll\\services\\interfaces\\iauthservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{93A450F4-AE55-4A2B-AF3C-CD5BAE9EEE08}|Library.BLL\\Library.BLL.csproj|solutionrelative:library.bll\\services\\interfaces\\iauthservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{93A450F4-AE55-4A2B-AF3C-CD5BAE9EEE08}|Library.BLL\\Library.BLL.csproj|d:\\itilab\\mvc\\librarymanagmentsystem\\library.bll\\modelvm\\account\\loginvm.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{93A450F4-AE55-4A2B-AF3C-CD5BAE9EEE08}|Library.BLL\\Library.BLL.csproj|solutionrelative:library.bll\\modelvm\\account\\loginvm.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{93A450F4-AE55-4A2B-AF3C-CD5BAE9EEE08}|Library.BLL\\Library.BLL.csproj|d:\\itilab\\mvc\\librarymanagmentsystem\\library.bll\\modelvm\\account\\registervm.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{93A450F4-AE55-4A2B-AF3C-CD5BAE9EEE08}|Library.BLL\\Library.BLL.csproj|solutionrelative:library.bll\\modelvm\\account\\registervm.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6AC27020-6BF2-20DA-77AB-94F74C3BE183}|Library.PL\\Library.PL.csproj|d:\\itilab\\mvc\\librarymanagmentsystem\\library.pl\\views\\book\\_editbookpartial.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{6AC27020-6BF2-20DA-77AB-94F74C3BE183}|Library.PL\\Library.PL.csproj|solutionrelative:library.pl\\views\\book\\_editbookpartial.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6AC27020-6BF2-20DA-77AB-94F74C3BE183}|Library.PL\\Library.PL.csproj|d:\\itilab\\mvc\\librarymanagmentsystem\\library.pl\\views\\shared\\_validationscriptspartial.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{6AC27020-6BF2-20DA-77AB-94F74C3BE183}|Library.PL\\Library.PL.csproj|solutionrelative:library.pl\\views\\shared\\_validationscriptspartial.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|E:\\Program Files\\Microsoft Visual Studio\\18\\Community\\MSBuild\\Current\\Bin\\amd64\\Microsoft.Common.CurrentVersion.targets||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{93A450F4-AE55-4A2B-AF3C-CD5BAE9EEE08}|Library.BLL\\Library.BLL.csproj|d:\\itilab\\mvc\\librarymanagmentsystem\\library.bll\\modelvm\\book\\updatebookvm.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{93A450F4-AE55-4A2B-AF3C-CD5BAE9EEE08}|Library.BLL\\Library.BLL.csproj|solutionrelative:library.bll\\modelvm\\book\\updatebookvm.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9ADBE351-8004-47B7-B7D1-AAC3AC0B4CEA}|Library.DAL\\Library.DAL.csproj|d:\\itilab\\mvc\\librarymanagmentsystem\\library.dal\\migrations\\20260513003432_addenum.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9ADBE351-8004-47B7-B7D1-AAC3AC0B4CEA}|Library.DAL\\Library.DAL.csproj|solutionrelative:library.dal\\migrations\\20260513003432_addenum.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9ADBE351-8004-47B7-B7D1-AAC3AC0B4CEA}|Library.DAL\\Library.DAL.csproj|d:\\itilab\\mvc\\librarymanagmentsystem\\library.dal\\repository\\implementations\\unitofwork.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9ADBE351-8004-47B7-B7D1-AAC3AC0B4CEA}|Library.DAL\\Library.DAL.csproj|solutionrelative:library.dal\\repository\\implementations\\unitofwork.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9ADBE351-8004-47B7-B7D1-AAC3AC0B4CEA}|Library.DAL\\Library.DAL.csproj|d:\\itilab\\mvc\\librarymanagmentsystem\\library.dal\\repository\\interfaces\\iunitofwork.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9ADBE351-8004-47B7-B7D1-AAC3AC0B4CEA}|Library.DAL\\Library.DAL.csproj|solutionrelative:library.dal\\repository\\interfaces\\iunitofwork.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{93A450F4-AE55-4A2B-AF3C-CD5BAE9EEE08}|Library.BLL\\Library.BLL.csproj|d:\\itilab\\mvc\\librarymanagmentsystem\\library.bll\\common\\response.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{93A450F4-AE55-4A2B-AF3C-CD5BAE9EEE08}|Library.BLL\\Library.BLL.csproj|solutionrelative:library.bll\\common\\response.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9ADBE351-8004-47B7-B7D1-AAC3AC0B4CEA}|Library.DAL\\Library.DAL.csproj|d:\\itilab\\mvc\\librarymanagmentsystem\\library.dal\\migrations\\20260511212345_initlibrary.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9ADBE351-8004-47B7-B7D1-AAC3AC0B4CEA}|Library.DAL\\Library.DAL.csproj|solutionrelative:library.dal\\migrations\\20260511212345_initlibrary.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9ADBE351-8004-47B7-B7D1-AAC3AC0B4CEA}|Library.DAL\\Library.DAL.csproj|d:\\itilab\\mvc\\librarymanagmentsystem\\library.dal\\migrations\\20260516014329_addreturnrequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9ADBE351-8004-47B7-B7D1-AAC3AC0B4CEA}|Library.DAL\\Library.DAL.csproj|solutionrelative:library.dal\\migrations\\20260516014329_addreturnrequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 7,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 26,
+              "Title": "BorrowService.cs",
+              "DocumentMoniker": "D:\\ITILab\\MVC\\LibraryManagmentSystem\\Library.BLL\\Services\\Implementations\\BorrowService.cs",
+              "RelativeDocumentMoniker": "Library.BLL\\Services\\Implementations\\BorrowService.cs",
+              "ToolTip": "D:\\ITILab\\MVC\\LibraryManagmentSystem\\Library.BLL\\Services\\Implementations\\BorrowService.cs",
+              "RelativeToolTip": "Library.BLL\\Services\\Implementations\\BorrowService.cs",
+              "ViewState": "AgIAAGwAAAAAAAAAAAAqwHgAAAAuAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-14T20:06:14.474Z",
+              "IsPinned": true
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{d78612c7-9962-4b83-95d9-268046dad23a}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{0ad07096-bba9-4900-a651-0598d26f6d24}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{aa2115a1-9712-457b-9047-dbb71ca2cdd2}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "MyBorrowedBooks.cshtml",
+              "DocumentMoniker": "D:\\ITILab\\MVC\\LibraryManagmentSystem\\Library.PL\\Views\\Library\\MyBorrowedBooks.cshtml",
+              "RelativeDocumentMoniker": "Library.PL\\Views\\Library\\MyBorrowedBooks.cshtml",
+              "ToolTip": "D:\\ITILab\\MVC\\LibraryManagmentSystem\\Library.PL\\Views\\Library\\MyBorrowedBooks.cshtml",
+              "RelativeToolTip": "Library.PL\\Views\\Library\\MyBorrowedBooks.cshtml",
+              "ViewState": "AgIAAMAAAAAAAAAAAAAAADcAAAAYAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-05-14T21:52:28.787Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "D:\\ITILab\\MVC\\LibraryManagmentSystem\\Library.PL\\Views\\Library\\Index.cshtml",
+              "RelativeDocumentMoniker": "Library.PL\\Views\\Library\\Index.cshtml",
+              "ToolTip": "D:\\ITILab\\MVC\\LibraryManagmentSystem\\Library.PL\\Views\\Library\\Index.cshtml",
+              "RelativeToolTip": "Library.PL\\Views\\Library\\Index.cshtml",
+              "ViewState": "AgIAAHEBAAAAAAAAAAAiwIwBAAAXAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-05-14T21:33:10.115Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "D:\\ITILab\\MVC\\LibraryManagmentSystem\\Library.PL\\Views\\Book\\Index.cshtml",
+              "RelativeDocumentMoniker": "Library.PL\\Views\\Book\\Index.cshtml",
+              "ToolTip": "D:\\ITILab\\MVC\\LibraryManagmentSystem\\Library.PL\\Views\\Book\\Index.cshtml",
+              "RelativeToolTip": "Library.PL\\Views\\Book\\Index.cshtml",
+              "ViewState": "AgIAAGYAAAAAAAAAAAAAAHEAAABVAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-05-13T21:24:46.109Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "D:\\ITILab\\MVC\\LibraryManagmentSystem\\Library.PL\\Views\\Home\\Index.cshtml",
+              "RelativeDocumentMoniker": "Library.PL\\Views\\Home\\Index.cshtml",
+              "ToolTip": "D:\\ITILab\\MVC\\LibraryManagmentSystem\\Library.PL\\Views\\Home\\Index.cshtml",
+              "RelativeToolTip": "Library.PL\\Views\\Home\\Index.cshtml",
+              "ViewState": "AgIAAGIBAAAAAAAAAAAkwNUBAAA8AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-05-15T02:12:08.166Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "books-module.css",
+              "DocumentMoniker": "D:\\ITILab\\MVC\\LibraryManagmentSystem\\Library.PL\\wwwroot\\css\\books-module.css",
+              "RelativeDocumentMoniker": "Library.PL\\wwwroot\\css\\books-module.css",
+              "ToolTip": "D:\\ITILab\\MVC\\LibraryManagmentSystem\\Library.PL\\wwwroot\\css\\books-module.css",
+              "RelativeToolTip": "Library.PL\\wwwroot\\css\\books-module.css",
+              "ViewState": "AgIAADkAAAAAAAAAAAAAAEoAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
+              "WhenOpened": "2026-05-13T20:27:03.685Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "site.css",
+              "DocumentMoniker": "D:\\ITILab\\MVC\\LibraryManagmentSystem\\Library.PL\\wwwroot\\css\\site.css",
+              "RelativeDocumentMoniker": "Library.PL\\wwwroot\\css\\site.css",
+              "ToolTip": "D:\\ITILab\\MVC\\LibraryManagmentSystem\\Library.PL\\wwwroot\\css\\site.css",
+              "RelativeToolTip": "Library.PL\\wwwroot\\css\\site.css",
+              "ViewState": "AgIAAIEAAAAAAAAAAAAAAJAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
+              "WhenOpened": "2026-05-13T20:27:08.526Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "_AddBookPartial.cshtml",
+              "DocumentMoniker": "D:\\ITILab\\MVC\\LibraryManagmentSystem\\Library.PL\\Views\\Book\\_AddBookPartial.cshtml",
+              "RelativeDocumentMoniker": "Library.PL\\Views\\Book\\_AddBookPartial.cshtml",
+              "ToolTip": "D:\\ITILab\\MVC\\LibraryManagmentSystem\\Library.PL\\Views\\Book\\_AddBookPartial.cshtml",
+              "RelativeToolTip": "Library.PL\\Views\\Book\\_AddBookPartial.cshtml",
+              "ViewState": "AgIAAEEAAAAAAAAAAAAQwFIAAABZAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-05-13T21:30:04.239Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "_AdminLayout.cshtml",
+              "DocumentMoniker": "D:\\ITILab\\MVC\\LibraryManagmentSystem\\Library.PL\\Views\\Shared\\_AdminLayout.cshtml",
+              "RelativeDocumentMoniker": "Library.PL\\Views\\Shared\\_AdminLayout.cshtml",
+              "ToolTip": "D:\\ITILab\\MVC\\LibraryManagmentSystem\\Library.PL\\Views\\Shared\\_AdminLayout.cshtml",
+              "RelativeToolTip": "Library.PL\\Views\\Shared\\_AdminLayout.cshtml",
+              "ViewState": "AgIAAEMBAAAAAAAAAAAAwGgBAAAXAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-05-15T22:46:38.087Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "_Layout.cshtml",
+              "DocumentMoniker": "D:\\ITILab\\MVC\\LibraryManagmentSystem\\Library.PL\\Views\\Shared\\_Layout.cshtml",
+              "RelativeDocumentMoniker": "Library.PL\\Views\\Shared\\_Layout.cshtml",
+              "ToolTip": "D:\\ITILab\\MVC\\LibraryManagmentSystem\\Library.PL\\Views\\Shared\\_Layout.cshtml",
+              "RelativeToolTip": "Library.PL\\Views\\Shared\\_Layout.cshtml",
+              "ViewState": "AgIAADcBAAAAAAAAAAAAwEYBAABbAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-05-13T20:21:21.536Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "Users.cshtml",
+              "DocumentMoniker": "D:\\ITILab\\MVC\\LibraryManagmentSystem\\Library.PL\\Views\\Admin\\Users.cshtml",
+              "RelativeDocumentMoniker": "Library.PL\\Views\\Admin\\Users.cshtml",
+              "ToolTip": "D:\\ITILab\\MVC\\LibraryManagmentSystem\\Library.PL\\Views\\Admin\\Users.cshtml",
+              "RelativeToolTip": "Library.PL\\Views\\Admin\\Users.cshtml",
+              "ViewState": "AgIAAEsAAAAAAAAAAAAAAFYAAABIAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-05-17T17:25:27.004Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "Dashboard.cshtml",
+              "DocumentMoniker": "D:\\ITILab\\MVC\\LibraryManagmentSystem\\Library.PL\\Views\\Admin\\Dashboard.cshtml",
+              "RelativeDocumentMoniker": "Library.PL\\Views\\Admin\\Dashboard.cshtml",
+              "ToolTip": "D:\\ITILab\\MVC\\LibraryManagmentSystem\\Library.PL\\Views\\Admin\\Dashboard.cshtml",
+              "RelativeToolTip": "Library.PL\\Views\\Admin\\Dashboard.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAAmAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-05-15T23:45:38.349Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "Borrowings.cshtml",
+              "DocumentMoniker": "D:\\ITILab\\MVC\\LibraryManagmentSystem\\Library.PL\\Views\\Admin\\Borrowings.cshtml",
+              "RelativeDocumentMoniker": "Library.PL\\Views\\Admin\\Borrowings.cshtml",
+              "ToolTip": "D:\\ITILab\\MVC\\LibraryManagmentSystem\\Library.PL\\Views\\Admin\\Borrowings.cshtml",
+              "RelativeToolTip": "Library.PL\\Views\\Admin\\Borrowings.cshtml",
+              "ViewState": "AgIAAEMAAAAAAAAAAAAAwFQAAAAhAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-05-15T22:46:05.968Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "_DetailsBookPartial.cshtml",
+              "DocumentMoniker": "D:\\ITILab\\MVC\\LibraryManagmentSystem\\Library.PL\\Views\\Book\\_DetailsBookPartial.cshtml",
+              "RelativeDocumentMoniker": "Library.PL\\Views\\Book\\_DetailsBookPartial.cshtml",
+              "ToolTip": "D:\\ITILab\\MVC\\LibraryManagmentSystem\\Library.PL\\Views\\Book\\_DetailsBookPartial.cshtml",
+              "RelativeToolTip": "Library.PL\\Views\\Book\\_DetailsBookPartial.cshtml",
+              "ViewState": "AgIAABsAAAAAAAAAAAAAACgAAAAQAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-05-17T17:22:44.647Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "BookController.cs",
+              "DocumentMoniker": "D:\\ITILab\\MVC\\LibraryManagmentSystem\\Library.PL\\Controllers\\BookController.cs",
+              "RelativeDocumentMoniker": "Library.PL\\Controllers\\BookController.cs",
+              "ToolTip": "D:\\ITILab\\MVC\\LibraryManagmentSystem\\Library.PL\\Controllers\\BookController.cs",
+              "RelativeToolTip": "Library.PL\\Controllers\\BookController.cs",
+              "ViewState": "AgIAAAgAAAAAAAAAAAAxwIMAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-13T19:56:59.603Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 18,
+              "Title": "AuthService.cs",
+              "DocumentMoniker": "D:\\ITILab\\MVC\\LibraryManagmentSystem\\Library.BLL\\Services\\Implementations\\AuthService.cs",
+              "RelativeDocumentMoniker": "Library.BLL\\Services\\Implementations\\AuthService.cs",
+              "ToolTip": "D:\\ITILab\\MVC\\LibraryManagmentSystem\\Library.BLL\\Services\\Implementations\\AuthService.cs",
+              "RelativeToolTip": "Library.BLL\\Services\\Implementations\\AuthService.cs",
+              "ViewState": "AgIAAGsAAAAAAAAAAAAAwHcAAAAcAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-14T00:51:35.061Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "Program.cs",
+              "DocumentMoniker": "D:\\ITILab\\MVC\\LibraryManagmentSystem\\Library.PL\\Program.cs",
+              "RelativeDocumentMoniker": "Library.PL\\Program.cs",
+              "ToolTip": "D:\\ITILab\\MVC\\LibraryManagmentSystem\\Library.PL\\Program.cs",
+              "RelativeToolTip": "Library.PL\\Program.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAFYAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-11T21:02:14.443Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 17,
+              "Title": "AuthController.cs",
+              "DocumentMoniker": "D:\\ITILab\\MVC\\LibraryManagmentSystem\\Library.PL\\Controllers\\AuthController.cs",
+              "RelativeDocumentMoniker": "Library.PL\\Controllers\\AuthController.cs",
+              "ToolTip": "D:\\ITILab\\MVC\\LibraryManagmentSystem\\Library.PL\\Controllers\\AuthController.cs",
+              "RelativeToolTip": "Library.PL\\Controllers\\AuthController.cs",
+              "ViewState": "AgIAACkAAAAAAAAAAAAAwDsAAAAyAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-14T01:25:46.023Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "D:\\ITILab\\MVC\\LibraryManagmentSystem\\Library.PL\\appsettings.json",
+              "RelativeDocumentMoniker": "Library.PL\\appsettings.json",
+              "ToolTip": "D:\\ITILab\\MVC\\LibraryManagmentSystem\\Library.PL\\appsettings.json",
+              "RelativeToolTip": "Library.PL\\appsettings.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAABqAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2026-05-11T21:02:00.53Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "ApplicationDbContext.cs",
+              "DocumentMoniker": "D:\\ITILab\\MVC\\LibraryManagmentSystem\\Library.DAL\\Context\\ApplicationDbContext.cs",
+              "RelativeDocumentMoniker": "Library.DAL\\Context\\ApplicationDbContext.cs",
+              "ToolTip": "D:\\ITILab\\MVC\\LibraryManagmentSystem\\Library.DAL\\Context\\ApplicationDbContext.cs",
+              "RelativeToolTip": "Library.DAL\\Context\\ApplicationDbContext.cs",
+              "ViewState": "AgIAAAYAAAAAAAAAAIBJwBgAAAAcAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-11T20:58:16.229Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 19,
+              "Title": "AdminService.cs",
+              "DocumentMoniker": "D:\\ITILab\\MVC\\LibraryManagmentSystem\\Library.BLL\\Services\\Implementations\\AdminService.cs",
+              "RelativeDocumentMoniker": "Library.BLL\\Services\\Implementations\\AdminService.cs",
+              "ToolTip": "D:\\ITILab\\MVC\\LibraryManagmentSystem\\Library.BLL\\Services\\Implementations\\AdminService.cs",
+              "RelativeToolTip": "Library.BLL\\Services\\Implementations\\AdminService.cs",
+              "ViewState": "AgIAAAwAAAAAAAAAAAAAABkAAACIAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-15T21:28:06.774Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 20,
+              "Title": "_PendingReturnsPartial.cshtml",
+              "DocumentMoniker": "D:\\ITILab\\MVC\\LibraryManagmentSystem\\Library.PL\\Views\\Admin\\_PendingReturnsPartial.cshtml",
+              "RelativeDocumentMoniker": "Library.PL\\Views\\Admin\\_PendingReturnsPartial.cshtml",
+              "ToolTip": "D:\\ITILab\\MVC\\LibraryManagmentSystem\\Library.PL\\Views\\Admin\\_PendingReturnsPartial.cshtml",
+              "RelativeToolTip": "Library.PL\\Views\\Admin\\_PendingReturnsPartial.cshtml",
+              "ViewState": "AgIAAFoAAAAAAAAAAAAAwGcAAABFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-05-16T01:13:34.655Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 22,
+              "Title": "BorrowController.cs",
+              "DocumentMoniker": "D:\\ITILab\\MVC\\LibraryManagmentSystem\\Library.PL\\Controllers\\BorrowController.cs",
+              "RelativeDocumentMoniker": "Library.PL\\Controllers\\BorrowController.cs",
+              "ToolTip": "D:\\ITILab\\MVC\\LibraryManagmentSystem\\Library.PL\\Controllers\\BorrowController.cs",
+              "RelativeToolTip": "Library.PL\\Controllers\\BorrowController.cs",
+              "ViewState": "AgIAAB4AAAAAAAAAAAAIwDUAAAA1AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-14T20:06:14.548Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 21,
+              "Title": "AdminController.cs",
+              "DocumentMoniker": "D:\\ITILab\\MVC\\LibraryManagmentSystem\\Library.PL\\Controllers\\AdminController.cs",
+              "RelativeDocumentMoniker": "Library.PL\\Controllers\\AdminController.cs",
+              "ToolTip": "D:\\ITILab\\MVC\\LibraryManagmentSystem\\Library.PL\\Controllers\\AdminController.cs",
+              "RelativeToolTip": "Library.PL\\Controllers\\AdminController.cs",
+              "ViewState": "AgIAACsAAAAAAAAAAAAswCcAAAAgAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-15T22:36:35.824Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 25,
+              "Title": "FileHelper.cs",
+              "DocumentMoniker": "D:\\ITILab\\MVC\\LibraryManagmentSystem\\Library.BLL\\Helper\\FileHelper.cs",
+              "RelativeDocumentMoniker": "Library.BLL\\Helper\\FileHelper.cs",
+              "ToolTip": "D:\\ITILab\\MVC\\LibraryManagmentSystem\\Library.BLL\\Helper\\FileHelper.cs",
+              "RelativeToolTip": "Library.BLL\\Helper\\FileHelper.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAA5AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-12T22:55:29.839Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 24,
+              "Title": "Library.BLL.csproj",
+              "DocumentMoniker": "D:\\ITILab\\MVC\\LibraryManagmentSystem\\Library.BLL\\Library.BLL.csproj",
+              "RelativeDocumentMoniker": "Library.BLL\\Library.BLL.csproj",
+              "ToolTip": "D:\\ITILab\\MVC\\LibraryManagmentSystem\\Library.BLL\\Library.BLL.csproj",
+              "RelativeToolTip": "Library.BLL\\Library.BLL.csproj",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABQAAAAKAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2026-05-11T20:47:04.778Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 67,
+              "Title": "20260516014329_addReturnRequest.cs",
+              "DocumentMoniker": "D:\\ITILab\\MVC\\LibraryManagmentSystem\\Library.DAL\\Migrations\\20260516014329_addReturnRequest.cs",
+              "RelativeDocumentMoniker": "Library.DAL\\Migrations\\20260516014329_addReturnRequest.cs",
+              "ToolTip": "D:\\ITILab\\MVC\\LibraryManagmentSystem\\Library.DAL\\Migrations\\20260516014329_addReturnRequest.cs",
+              "RelativeToolTip": "Library.DAL\\Migrations\\20260516014329_addReturnRequest.cs",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-16T01:43:29.591Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 27,
+              "Title": "LibraryController.cs",
+              "DocumentMoniker": "D:\\ITILab\\MVC\\LibraryManagmentSystem\\Library.PL\\Controllers\\LibraryController.cs",
+              "RelativeDocumentMoniker": "Library.PL\\Controllers\\LibraryController.cs",
+              "ToolTip": "D:\\ITILab\\MVC\\LibraryManagmentSystem\\Library.PL\\Controllers\\LibraryController.cs",
+              "RelativeToolTip": "Library.PL\\Controllers\\LibraryController.cs",
+              "ViewState": "AgIAAAYAAAAAAAAAAIBJwBIAAAAtAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-14T21:23:41.929Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 23,
+              "Title": "Library.PL.csproj",
+              "DocumentMoniker": "D:\\ITILab\\MVC\\LibraryManagmentSystem\\Library.PL\\Library.PL.csproj",
+              "RelativeDocumentMoniker": "Library.PL\\Library.PL.csproj",
+              "ToolTip": "D:\\ITILab\\MVC\\LibraryManagmentSystem\\Library.PL\\Library.PL.csproj",
+              "RelativeToolTip": "Library.PL\\Library.PL.csproj",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAAABUAAAAnAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2026-05-11T20:47:24.521Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 28,
+              "Title": "IAdminService.cs",
+              "DocumentMoniker": "D:\\ITILab\\MVC\\LibraryManagmentSystem\\Library.BLL\\Services\\Interfaces\\IAdminService.cs",
+              "RelativeDocumentMoniker": "Library.BLL\\Services\\Interfaces\\IAdminService.cs",
+              "ToolTip": "D:\\ITILab\\MVC\\LibraryManagmentSystem\\Library.BLL\\Services\\Interfaces\\IAdminService.cs",
+              "RelativeToolTip": "Library.BLL\\Services\\Interfaces\\IAdminService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-15T21:24:24.511Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 29,
+              "Title": "IBorrowService.cs",
+              "DocumentMoniker": "D:\\ITILab\\MVC\\LibraryManagmentSystem\\Library.BLL\\Services\\Interfaces\\IBorrowService.cs",
+              "RelativeDocumentMoniker": "Library.BLL\\Services\\Interfaces\\IBorrowService.cs",
+              "ToolTip": "D:\\ITILab\\MVC\\LibraryManagmentSystem\\Library.BLL\\Services\\Interfaces\\IBorrowService.cs",
+              "RelativeToolTip": "Library.BLL\\Services\\Interfaces\\IBorrowService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-14T20:06:14.445Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 30,
+              "Title": "PendingReturnVM.cs",
+              "DocumentMoniker": "D:\\ITILab\\MVC\\LibraryManagmentSystem\\Library.BLL\\ModelVM\\Borrow\\PendingReturnVM.cs",
+              "RelativeDocumentMoniker": "Library.BLL\\ModelVM\\Borrow\\PendingReturnVM.cs",
+              "ToolTip": "D:\\ITILab\\MVC\\LibraryManagmentSystem\\Library.BLL\\ModelVM\\Borrow\\PendingReturnVM.cs",
+              "RelativeToolTip": "Library.BLL\\ModelVM\\Borrow\\PendingReturnVM.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAAoAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-16T00:51:35.873Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 32,
+              "Title": "BorrowRecord.cs",
+              "DocumentMoniker": "D:\\ITILab\\MVC\\LibraryManagmentSystem\\Library.DAL\\Models\\BorrowRecord.cs",
+              "RelativeDocumentMoniker": "Library.DAL\\Models\\BorrowRecord.cs",
+              "ToolTip": "D:\\ITILab\\MVC\\LibraryManagmentSystem\\Library.DAL\\Models\\BorrowRecord.cs",
+              "RelativeToolTip": "Library.DAL\\Models\\BorrowRecord.cs",
+              "ViewState": "AgIAAAoAAAAAAAAAAAAzwBIAAAA6AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-11T20:54:12.739Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 31,
+              "Title": "BorrowedBookVM.cs",
+              "DocumentMoniker": "D:\\ITILab\\MVC\\LibraryManagmentSystem\\Library.BLL\\ModelVM\\Borrow\\BorrowedBookVM.cs",
+              "RelativeDocumentMoniker": "Library.BLL\\ModelVM\\Borrow\\BorrowedBookVM.cs",
+              "ToolTip": "D:\\ITILab\\MVC\\LibraryManagmentSystem\\Library.BLL\\ModelVM\\Borrow\\BorrowedBookVM.cs",
+              "RelativeToolTip": "Library.BLL\\ModelVM\\Borrow\\BorrowedBookVM.cs",
+              "ViewState": "AgIAAAMAAAAAAAAAAIBJwBMAAAAxAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-14T20:36:50.35Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 34,
+              "Title": "Login.cshtml",
+              "DocumentMoniker": "D:\\ITILab\\MVC\\LibraryManagmentSystem\\Library.PL\\Views\\Auth\\Login.cshtml",
+              "RelativeDocumentMoniker": "Library.PL\\Views\\Auth\\Login.cshtml",
+              "ToolTip": "D:\\ITILab\\MVC\\LibraryManagmentSystem\\Library.PL\\Views\\Auth\\Login.cshtml",
+              "RelativeToolTip": "Library.PL\\Views\\Auth\\Login.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAAaAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-05-14T01:42:40.411Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 35,
+              "Title": "_AuthLayout.cshtml",
+              "DocumentMoniker": "D:\\ITILab\\MVC\\LibraryManagmentSystem\\Library.PL\\Views\\Shared\\_AuthLayout.cshtml",
+              "RelativeDocumentMoniker": "Library.PL\\Views\\Shared\\_AuthLayout.cshtml",
+              "ToolTip": "D:\\ITILab\\MVC\\LibraryManagmentSystem\\Library.PL\\Views\\Shared\\_AuthLayout.cshtml",
+              "RelativeToolTip": "Library.PL\\Views\\Shared\\_AuthLayout.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAD0AAAAHAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-05-15T23:35:45.08Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 33,
+              "Title": "Register.cshtml",
+              "DocumentMoniker": "D:\\ITILab\\MVC\\LibraryManagmentSystem\\Library.PL\\Views\\Auth\\Register.cshtml",
+              "RelativeDocumentMoniker": "Library.PL\\Views\\Auth\\Register.cshtml",
+              "ToolTip": "D:\\ITILab\\MVC\\LibraryManagmentSystem\\Library.PL\\Views\\Auth\\Register.cshtml",
+              "RelativeToolTip": "Library.PL\\Views\\Auth\\Register.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAAaAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-05-14T01:47:09.91Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 36,
+              "Title": "MappingProfile.cs",
+              "DocumentMoniker": "D:\\ITILab\\MVC\\LibraryManagmentSystem\\Library.BLL\\Mapping\\MappingProfile.cs",
+              "RelativeDocumentMoniker": "Library.BLL\\Mapping\\MappingProfile.cs",
+              "ToolTip": "D:\\ITILab\\MVC\\LibraryManagmentSystem\\Library.BLL\\Mapping\\MappingProfile.cs",
+              "RelativeToolTip": "Library.BLL\\Mapping\\MappingProfile.cs",
+              "ViewState": "AgIAABwAAAAAAAAAAAAQwDcAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-12T22:54:18.365Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 37,
+              "Title": "DashboardVM.cs",
+              "DocumentMoniker": "D:\\ITILab\\MVC\\LibraryManagmentSystem\\Library.BLL\\ModelVM\\Admin\\DashboardVM.cs",
+              "RelativeDocumentMoniker": "Library.BLL\\ModelVM\\Admin\\DashboardVM.cs",
+              "ToolTip": "D:\\ITILab\\MVC\\LibraryManagmentSystem\\Library.BLL\\ModelVM\\Admin\\DashboardVM.cs",
+              "RelativeToolTip": "Library.BLL\\ModelVM\\Admin\\DashboardVM.cs",
+              "ViewState": "AgIAABcAAAAAAAAAAAAUwDkAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-15T21:15:22.076Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 38,
+              "Title": "BorrowRecordListVM.cs",
+              "DocumentMoniker": "D:\\ITILab\\MVC\\LibraryManagmentSystem\\Library.BLL\\ModelVM\\Admin\\BorrowRecordListVM.cs",
+              "RelativeDocumentMoniker": "Library.BLL\\ModelVM\\Admin\\BorrowRecordListVM.cs",
+              "ToolTip": "D:\\ITILab\\MVC\\LibraryManagmentSystem\\Library.BLL\\ModelVM\\Admin\\BorrowRecordListVM.cs",
+              "RelativeToolTip": "Library.BLL\\ModelVM\\Admin\\BorrowRecordListVM.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABwAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-15T21:16:50.359Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 39,
+              "Title": "UserListVM.cs",
+              "DocumentMoniker": "D:\\ITILab\\MVC\\LibraryManagmentSystem\\Library.BLL\\ModelVM\\Admin\\UserListVM.cs",
+              "RelativeDocumentMoniker": "Library.BLL\\ModelVM\\Admin\\UserListVM.cs",
+              "ToolTip": "D:\\ITILab\\MVC\\LibraryManagmentSystem\\Library.BLL\\ModelVM\\Admin\\UserListVM.cs",
+              "RelativeToolTip": "Library.BLL\\ModelVM\\Admin\\UserListVM.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAB0AAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-15T21:17:52.062Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 40,
+              "Title": "_ViewImports.cshtml",
+              "DocumentMoniker": "D:\\ITILab\\MVC\\LibraryManagmentSystem\\Library.PL\\Views\\_ViewImports.cshtml",
+              "RelativeDocumentMoniker": "Library.PL\\Views\\_ViewImports.cshtml",
+              "ToolTip": "D:\\ITILab\\MVC\\LibraryManagmentSystem\\Library.PL\\Views\\_ViewImports.cshtml",
+              "RelativeToolTip": "Library.PL\\Views\\_ViewImports.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-05-15T19:33:53.316Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 42,
+              "Title": "Book.cs",
+              "DocumentMoniker": "D:\\ITILab\\MVC\\LibraryManagmentSystem\\Library.DAL\\Models\\Book.cs",
+              "RelativeDocumentMoniker": "Library.DAL\\Models\\Book.cs",
+              "ToolTip": "D:\\ITILab\\MVC\\LibraryManagmentSystem\\Library.DAL\\Models\\Book.cs",
+              "RelativeToolTip": "Library.DAL\\Models\\Book.cs",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAgwBsAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-11T20:54:13.023Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 41,
+              "Title": "ApplicationUser.cs",
+              "DocumentMoniker": "D:\\ITILab\\MVC\\LibraryManagmentSystem\\Library.DAL\\Models\\ApplicationUser.cs",
+              "RelativeDocumentMoniker": "Library.DAL\\Models\\ApplicationUser.cs",
+              "ToolTip": "D:\\ITILab\\MVC\\LibraryManagmentSystem\\Library.DAL\\Models\\ApplicationUser.cs",
+              "RelativeToolTip": "Library.DAL\\Models\\ApplicationUser.cs",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAwwAsAAAAUAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-11T20:54:13.2Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 43,
+              "Title": "HomeController.cs",
+              "DocumentMoniker": "D:\\ITILab\\MVC\\LibraryManagmentSystem\\Library.PL\\Controllers\\HomeController.cs",
+              "RelativeDocumentMoniker": "Library.PL\\Controllers\\HomeController.cs",
+              "ToolTip": "D:\\ITILab\\MVC\\LibraryManagmentSystem\\Library.PL\\Controllers\\HomeController.cs",
+              "RelativeToolTip": "Library.PL\\Controllers\\HomeController.cs",
+              "ViewState": "AgIAABAAAAAAAAAAAAAmwBkAAAA0AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-15T02:06:48.096Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 44,
+              "Title": "Category.cs",
+              "DocumentMoniker": "D:\\ITILab\\MVC\\LibraryManagmentSystem\\Library.DAL\\Enums\\Category.cs",
+              "RelativeDocumentMoniker": "Library.DAL\\Enums\\Category.cs",
+              "ToolTip": "D:\\ITILab\\MVC\\LibraryManagmentSystem\\Library.DAL\\Enums\\Category.cs",
+              "RelativeToolTip": "Library.DAL\\Enums\\Category.cs",
+              "ViewState": "AgIAAAUAAAAAAAAAAADwvw4AAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-13T00:30:36.416Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 45,
+              "Title": "DbInitializer.cs",
+              "DocumentMoniker": "D:\\ITILab\\MVC\\LibraryManagmentSystem\\Library.DAL\\Seed\\DbInitializer.cs",
+              "RelativeDocumentMoniker": "Library.DAL\\Seed\\DbInitializer.cs",
+              "ToolTip": "D:\\ITILab\\MVC\\LibraryManagmentSystem\\Library.DAL\\Seed\\DbInitializer.cs",
+              "RelativeToolTip": "Library.DAL\\Seed\\DbInitializer.cs",
+              "ViewState": "AgIAAA4AAAAAAAAAAAAiwCYAAAARAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-14T01:30:25.144Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 46,
+              "Title": "LibraryService.cs",
+              "DocumentMoniker": "D:\\ITILab\\MVC\\LibraryManagmentSystem\\Library.BLL\\Services\\Implementations\\LibraryService.cs",
+              "RelativeDocumentMoniker": "Library.BLL\\Services\\Implementations\\LibraryService.cs",
+              "ToolTip": "D:\\ITILab\\MVC\\LibraryManagmentSystem\\Library.BLL\\Services\\Implementations\\LibraryService.cs",
+              "RelativeToolTip": "Library.BLL\\Services\\Implementations\\LibraryService.cs",
+              "ViewState": "AgIAAB4AAAAAAAAAAAAIwDgAAAANAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-14T20:47:55.048Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 47,
+              "Title": "BookService.cs",
+              "DocumentMoniker": "D:\\ITILab\\MVC\\LibraryManagmentSystem\\Library.BLL\\Services\\Implementations\\BookService.cs",
+              "RelativeDocumentMoniker": "Library.BLL\\Services\\Implementations\\BookService.cs",
+              "ToolTip": "D:\\ITILab\\MVC\\LibraryManagmentSystem\\Library.BLL\\Services\\Implementations\\BookService.cs",
+              "RelativeToolTip": "Library.BLL\\Services\\Implementations\\BookService.cs",
+              "ViewState": "AgIAAAgAAAAAAAAAAAAYwJ4AAAASAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-13T23:16:30.635Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 48,
+              "Title": "ILibraryService.cs",
+              "DocumentMoniker": "D:\\ITILab\\MVC\\LibraryManagmentSystem\\Library.BLL\\Services\\Interfaces\\ILibraryService.cs",
+              "RelativeDocumentMoniker": "Library.BLL\\Services\\Interfaces\\ILibraryService.cs",
+              "ToolTip": "D:\\ITILab\\MVC\\LibraryManagmentSystem\\Library.BLL\\Services\\Interfaces\\ILibraryService.cs",
+              "RelativeToolTip": "Library.BLL\\Services\\Interfaces\\ILibraryService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAkAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-14T20:46:03.443Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 49,
+              "Title": "IBookService.cs",
+              "DocumentMoniker": "D:\\ITILab\\MVC\\LibraryManagmentSystem\\Library.BLL\\Services\\Interfaces\\IBookService.cs",
+              "RelativeDocumentMoniker": "Library.BLL\\Services\\Interfaces\\IBookService.cs",
+              "ToolTip": "D:\\ITILab\\MVC\\LibraryManagmentSystem\\Library.BLL\\Services\\Interfaces\\IBookService.cs",
+              "RelativeToolTip": "Library.BLL\\Services\\Interfaces\\IBookService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-14T00:58:10.265Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 50,
+              "Title": "LibraryBooksVM.cs",
+              "DocumentMoniker": "D:\\ITILab\\MVC\\LibraryManagmentSystem\\Library.BLL\\ModelVM\\Library\\LibraryBooksVM.cs",
+              "RelativeDocumentMoniker": "Library.BLL\\ModelVM\\Library\\LibraryBooksVM.cs",
+              "ToolTip": "D:\\ITILab\\MVC\\LibraryManagmentSystem\\Library.BLL\\ModelVM\\Library\\LibraryBooksVM.cs",
+              "RelativeToolTip": "Library.BLL\\ModelVM\\Library\\LibraryBooksVM.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAA3AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-14T20:35:56.379Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 53,
+              "Title": "BorrowVM.cs",
+              "DocumentMoniker": "D:\\ITILab\\MVC\\LibraryManagmentSystem\\Library.BLL\\ModelVM\\Borrow\\BorrowVM.cs",
+              "RelativeDocumentMoniker": "Library.BLL\\ModelVM\\Borrow\\BorrowVM.cs",
+              "ToolTip": "D:\\ITILab\\MVC\\LibraryManagmentSystem\\Library.BLL\\ModelVM\\Borrow\\BorrowVM.cs",
+              "RelativeToolTip": "Library.BLL\\ModelVM\\Borrow\\BorrowVM.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-14T20:06:12.452Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 54,
+              "Title": "Library.DAL.csproj",
+              "DocumentMoniker": "D:\\ITILab\\MVC\\LibraryManagmentSystem\\Library.DAL\\Library.DAL.csproj",
+              "RelativeDocumentMoniker": "Library.DAL\\Library.DAL.csproj",
+              "ToolTip": "D:\\ITILab\\MVC\\LibraryManagmentSystem\\Library.DAL\\Library.DAL.csproj",
+              "RelativeToolTip": "Library.DAL\\Library.DAL.csproj",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2026-05-11T20:48:13.548Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 55,
+              "Title": "IAuthService.cs",
+              "DocumentMoniker": "D:\\ITILab\\MVC\\LibraryManagmentSystem\\Library.BLL\\Services\\Interfaces\\IAuthService.cs",
+              "RelativeDocumentMoniker": "Library.BLL\\Services\\Interfaces\\IAuthService.cs",
+              "ToolTip": "D:\\ITILab\\MVC\\LibraryManagmentSystem\\Library.BLL\\Services\\Interfaces\\IAuthService.cs",
+              "RelativeToolTip": "Library.BLL\\Services\\Interfaces\\IAuthService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-14T00:45:23.584Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 56,
+              "Title": "LoginVM.cs",
+              "DocumentMoniker": "D:\\ITILab\\MVC\\LibraryManagmentSystem\\Library.BLL\\ModelVM\\Account\\LoginVM.cs",
+              "RelativeDocumentMoniker": "Library.BLL\\ModelVM\\Account\\LoginVM.cs",
+              "ToolTip": "D:\\ITILab\\MVC\\LibraryManagmentSystem\\Library.BLL\\ModelVM\\Account\\LoginVM.cs",
+              "RelativeToolTip": "Library.BLL\\ModelVM\\Account\\LoginVM.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAAsAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-14T00:44:14.077Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 57,
+              "Title": "RegisterVM.cs",
+              "DocumentMoniker": "D:\\ITILab\\MVC\\LibraryManagmentSystem\\Library.BLL\\ModelVM\\Account\\RegisterVM.cs",
+              "RelativeDocumentMoniker": "Library.BLL\\ModelVM\\Account\\RegisterVM.cs",
+              "ToolTip": "D:\\ITILab\\MVC\\LibraryManagmentSystem\\Library.BLL\\ModelVM\\Account\\RegisterVM.cs",
+              "RelativeToolTip": "Library.BLL\\ModelVM\\Account\\RegisterVM.cs",
+              "ViewState": "AgIAAAEAAAAAAAAAAIBZwBkAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-14T00:39:31.244Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 58,
+              "Title": "_EditBookPartial.cshtml",
+              "DocumentMoniker": "D:\\ITILab\\MVC\\LibraryManagmentSystem\\Library.PL\\Views\\Book\\_EditBookPartial.cshtml",
+              "RelativeDocumentMoniker": "Library.PL\\Views\\Book\\_EditBookPartial.cshtml",
+              "ToolTip": "D:\\ITILab\\MVC\\LibraryManagmentSystem\\Library.PL\\Views\\Book\\_EditBookPartial.cshtml",
+              "RelativeToolTip": "Library.PL\\Views\\Book\\_EditBookPartial.cshtml",
+              "ViewState": "AgIAAF8AAAAAAAAAAAAqwGkAAAAHAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-05-13T21:30:23.882Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 59,
+              "Title": "_ValidationScriptsPartial.cshtml",
+              "DocumentMoniker": "D:\\ITILab\\MVC\\LibraryManagmentSystem\\Library.PL\\Views\\Shared\\_ValidationScriptsPartial.cshtml",
+              "RelativeDocumentMoniker": "Library.PL\\Views\\Shared\\_ValidationScriptsPartial.cshtml",
+              "ToolTip": "D:\\ITILab\\MVC\\LibraryManagmentSystem\\Library.PL\\Views\\Shared\\_ValidationScriptsPartial.cshtml",
+              "RelativeToolTip": "Library.PL\\Views\\Shared\\_ValidationScriptsPartial.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-05-13T21:51:45.119Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 60,
+              "Title": "Microsoft.Common.CurrentVersion.targets",
+              "DocumentMoniker": "E:\\Program Files\\Microsoft Visual Studio\\18\\Community\\MSBuild\\Current\\Bin\\amd64\\Microsoft.Common.CurrentVersion.targets",
+              "ToolTip": "E:\\Program Files\\Microsoft Visual Studio\\18\\Community\\MSBuild\\Current\\Bin\\amd64\\Microsoft.Common.CurrentVersion.targets",
+              "ViewState": "AgIAAAwVAAAAAAAAAAAwwBIVAAAEAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003801|",
+              "WhenOpened": "2026-05-13T22:54:36.545Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 61,
+              "Title": "UpdateBookVM.cs",
+              "DocumentMoniker": "D:\\ITILab\\MVC\\LibraryManagmentSystem\\Library.BLL\\ModelVM\\Book\\UpdateBookVM.cs",
+              "RelativeDocumentMoniker": "Library.BLL\\ModelVM\\Book\\UpdateBookVM.cs",
+              "ToolTip": "D:\\ITILab\\MVC\\LibraryManagmentSystem\\Library.BLL\\ModelVM\\Book\\UpdateBookVM.cs",
+              "RelativeToolTip": "Library.BLL\\ModelVM\\Book\\UpdateBookVM.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-13T21:40:48.67Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 62,
+              "Title": "20260513003432_addEnum.cs",
+              "DocumentMoniker": "D:\\ITILab\\MVC\\LibraryManagmentSystem\\Library.DAL\\Migrations\\20260513003432_addEnum.cs",
+              "RelativeDocumentMoniker": "Library.DAL\\Migrations\\20260513003432_addEnum.cs",
+              "ToolTip": "D:\\ITILab\\MVC\\LibraryManagmentSystem\\Library.DAL\\Migrations\\20260513003432_addEnum.cs",
+              "RelativeToolTip": "Library.DAL\\Migrations\\20260513003432_addEnum.cs",
+              "ViewState": "AgIAAAgAAAAAAAAAAAAAwAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-13T00:34:33.315Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 51,
+              "Title": "GenericRepo.cs",
+              "DocumentMoniker": "D:\\ITILab\\MVC\\LibraryManagmentSystem\\Library.DAL\\Repository\\Implementations\\GenericRepo.cs",
+              "RelativeDocumentMoniker": "Library.DAL\\Repository\\Implementations\\GenericRepo.cs",
+              "ToolTip": "D:\\ITILab\\MVC\\LibraryManagmentSystem\\Library.DAL\\Repository\\Implementations\\GenericRepo.cs",
+              "RelativeToolTip": "Library.DAL\\Repository\\Implementations\\GenericRepo.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAKAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-11T22:02:56.003Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 63,
+              "Title": "UnitOfWork.cs",
+              "DocumentMoniker": "D:\\ITILab\\MVC\\LibraryManagmentSystem\\Library.DAL\\Repository\\Implementations\\UnitOfWork.cs",
+              "RelativeDocumentMoniker": "Library.DAL\\Repository\\Implementations\\UnitOfWork.cs",
+              "ToolTip": "D:\\ITILab\\MVC\\LibraryManagmentSystem\\Library.DAL\\Repository\\Implementations\\UnitOfWork.cs",
+              "RelativeToolTip": "Library.DAL\\Repository\\Implementations\\UnitOfWork.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAAxAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-12T23:20:12.955Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 64,
+              "Title": "IUnitOfWork.cs",
+              "DocumentMoniker": "D:\\ITILab\\MVC\\LibraryManagmentSystem\\Library.DAL\\Repository\\Interfaces\\IUnitOfWork.cs",
+              "RelativeDocumentMoniker": "Library.DAL\\Repository\\Interfaces\\IUnitOfWork.cs",
+              "ToolTip": "D:\\ITILab\\MVC\\LibraryManagmentSystem\\Library.DAL\\Repository\\Interfaces\\IUnitOfWork.cs",
+              "RelativeToolTip": "Library.DAL\\Repository\\Interfaces\\IUnitOfWork.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-12T23:19:00.072Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 52,
+              "Title": "IGenericRepo.cs",
+              "DocumentMoniker": "D:\\ITILab\\MVC\\LibraryManagmentSystem\\Library.DAL\\Repository\\Interfaces\\IGenericRepo.cs",
+              "RelativeDocumentMoniker": "Library.DAL\\Repository\\Interfaces\\IGenericRepo.cs",
+              "ToolTip": "D:\\ITILab\\MVC\\LibraryManagmentSystem\\Library.DAL\\Repository\\Interfaces\\IGenericRepo.cs",
+              "RelativeToolTip": "Library.DAL\\Repository\\Interfaces\\IGenericRepo.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAABEAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-11T22:02:35.828Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 65,
+              "Title": "Response.cs",
+              "DocumentMoniker": "D:\\ITILab\\MVC\\LibraryManagmentSystem\\Library.BLL\\Common\\Response.cs",
+              "RelativeDocumentMoniker": "Library.BLL\\Common\\Response.cs",
+              "ToolTip": "D:\\ITILab\\MVC\\LibraryManagmentSystem\\Library.BLL\\Common\\Response.cs",
+              "RelativeToolTip": "Library.BLL\\Common\\Response.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAABHAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-12T22:51:19.225Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 66,
+              "Title": "20260511212345_InitLibrary.cs",
+              "DocumentMoniker": "D:\\ITILab\\MVC\\LibraryManagmentSystem\\Library.DAL\\Migrations\\20260511212345_InitLibrary.cs",
+              "RelativeDocumentMoniker": "Library.DAL\\Migrations\\20260511212345_InitLibrary.cs",
+              "ToolTip": "D:\\ITILab\\MVC\\LibraryManagmentSystem\\Library.DAL\\Migrations\\20260511212345_InitLibrary.cs",
+              "RelativeToolTip": "Library.DAL\\Migrations\\20260511212345_InitLibrary.cs",
+              "ViewState": "AgIAAEkAAAAAAAAAAAAQwAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-11T21:23:46.229Z"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

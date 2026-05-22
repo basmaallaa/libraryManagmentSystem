@@ -1,0 +1,15 @@
+D:\ITILab\MVC\LibraryManagmentSystem\Library.BLL\bin\Debug\net10.0\Library.BLL.deps.json
+D:\ITILab\MVC\LibraryManagmentSystem\Library.BLL\bin\Debug\net10.0\Library.BLL.dll
+D:\ITILab\MVC\LibraryManagmentSystem\Library.BLL\bin\Debug\net10.0\Library.BLL.pdb
+D:\ITILab\MVC\LibraryManagmentSystem\Library.BLL\bin\Debug\net10.0\Library.DAL.dll
+D:\ITILab\MVC\LibraryManagmentSystem\Library.BLL\bin\Debug\net10.0\Library.DAL.pdb
+D:\ITILab\MVC\LibraryManagmentSystem\Library.BLL\obj\Debug\net10.0\Library.BLL.csproj.AssemblyReference.cache
+D:\ITILab\MVC\LibraryManagmentSystem\Library.BLL\obj\Debug\net10.0\Library.BLL.GeneratedMSBuildEditorConfig.editorconfig
+D:\ITILab\MVC\LibraryManagmentSystem\Library.BLL\obj\Debug\net10.0\Library.BLL.AssemblyInfoInputs.cache
+D:\ITILab\MVC\LibraryManagmentSystem\Library.BLL\obj\Debug\net10.0\Library.BLL.AssemblyInfo.cs
+D:\ITILab\MVC\LibraryManagmentSystem\Library.BLL\obj\Debug\net10.0\Library.BLL.csproj.CoreCompileInputs.cache
+D:\ITILab\MVC\LibraryManagmentSystem\Library.BLL\obj\Debug\net10.0\Library..6B42F545.Up2Date
+D:\ITILab\MVC\LibraryManagmentSystem\Library.BLL\obj\Debug\net10.0\Library.BLL.dll
+D:\ITILab\MVC\LibraryManagmentSystem\Library.BLL\obj\Debug\net10.0\refint\Library.BLL.dll
+D:\ITILab\MVC\LibraryManagmentSystem\Library.BLL\obj\Debug\net10.0\Library.BLL.pdb
+D:\ITILab\MVC\LibraryManagmentSystem\Library.BLL\obj\Debug\net10.0\ref\Library.BLL.dll

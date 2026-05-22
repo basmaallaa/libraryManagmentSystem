@@ -1,0 +1,75 @@
+/*
+ * ============================================================
+ *  Library MVC – Books Module Global Styles
+ *  Include this block in your site.css OR inside _Layout.cshtml
+ *  <link> tag, or paste into an existing stylesheet.
+ * ============================================================
+ */
+
+/* ── Google Fonts ── */
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap');
+
+/* ── Root Variables ── */
+:root {
+    --lib-primary:        #4f46e5;
+    --lib-primary-light:  #ede9fe;
+    --lib-surface:        #ffffff;
+    --lib-border:         #e2e8f0;
+    --lib-bg:             #f8fafc;
+    --lib-text:           #0f172a;
+    --lib-muted:          #64748b;
+    --lib-shadow-sm:      0 1px 3px rgba(0,0,0,.08), 0 1px 2px rgba(0,0,0,.04);
+    --lib-shadow-md:      0 4px 16px rgba(0,0,0,.1);
+    --lib-radius:         12px;
+}
+
+/* ── Body / Base ── */
+body {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    background: var(--lib-bg);
+    color: var(--lib-text);
+}
+
+/* ── Buttons ── */
+.btn-primary {
+    background: var(--lib-primary);
+    border-color: var(--lib-primary);
+}
+.btn-primary:hover {
+    background: #4338ca;
+    border-color: #4338ca;
+}
+
+/* ── Form Controls ── */
+.form-control:focus,
+.form-select:focus {
+    border-color: var(--lib-primary);
+    box-shadow: 0 0 0 3px rgba(79,70,229,.12);
+}
+
+/* ── Scrollbar (webkit) ── */
+::-webkit-scrollbar { width: 6px; height: 6px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: #cbd5e1; border-radius: 3px; }
+::-webkit-scrollbar-thumb:hover { background: #94a3b8; }
+
+/* ── Modal Backdrop ── */
+.modal-backdrop.show { opacity: .5; }
+
+/* ── Transitions ── */
+.modal.fade .modal-dialog {
+    transition: transform .25s cubic-bezier(.4,0,.2,1), opacity .25s;
+    transform: translateY(-12px) scale(.97);
+}
+.modal.show .modal-dialog {
+    transform: translateY(0) scale(1);
+}
+.category-mystery {
+    background: #fce7f3;
+    color: #9d174d;
+}
+
+.category-biography {
+    background: #dcfce7;
+    color: #166534;
+}

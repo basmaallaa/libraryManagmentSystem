@@ -1,0 +1,496 @@
+@using Library.DAL.Models
+@using Microsoft.AspNetCore.Identity
+
+@inject UserManager<ApplicationUser> UserManager
+
+@{
+    var currentUser = await UserManager.GetUserAsync(User);
+}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] — Bibliotheca Admin</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,600;0,700;1,500&family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
+    @await RenderSectionAsync("Styles", required: false)
+    <style>
+    /* ═══════════════════════════════════════════════════════════
+       ADMIN LAYOUT — matches home page warm/editorial palette
+    ═══════════════════════════════════════════════════════════ */
+    :root {
+        --ink:        #1c1410;
+        --ink-2:      #3a2c22;
+        --muted:      #7a6e62;
+        --cream:      #faf7f2;
+        --warm:       #f5efe4;
+        --border:     #e8dfd0;
+        --amber:      #c9813a;
+        --amber-dark: #a3641e;
+        --amber-lt:   #fdf0e0;
+        --green:      #2d7a4f;
+        --green-lt:   #e6f5ed;
+        --red:        #dc2626;
+        --red-lt:     #fee2e2;
+        --blue:       #1d4ed8;
+        --blue-lt:    #dbeafe;
+        --sidebar-w:  260px;
+        --top-h:      64px;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; }
+    html { height: 100%; }
+
+    body {
+        font-family: 'DM Sans', sans-serif;
+        background: var(--cream);
+        color: var(--ink);
+        min-height: 100vh;
+        -webkit-font-smoothing: antialiased;
+    }
+
+    /* ── Sidebar ──────────────────────────────────────────── */
+    .admin-sidebar {
+        position: fixed; top: 0; left: 0;
+        width: var(--sidebar-w);
+        height: 100vh;
+        background: var(--ink);
+        display: flex; flex-direction: column;
+        z-index: 1040;
+        transition: transform .3s cubic-bezier(.4,0,.2,1);
+        overflow-y: auto;
+        scrollbar-width: thin;
+        scrollbar-color: rgba(255,255,255,.1) transparent;
+    }
+    .admin-sidebar::-webkit-scrollbar { width: 4px; }
+    .admin-sidebar::-webkit-scrollbar-thumb { background: rgba(255,255,255,.1); }
+
+    /* Sidebar brand */
+    .sb-brand {
+        display: flex; align-items: center; gap: .6rem;
+        padding: 1.3rem 1.5rem 1.1rem;
+        border-bottom: 1px solid rgba(255,255,255,.07);
+        text-decoration: none;
+    }
+    .sb-brand-icon {
+        width: 36px; height: 36px; border-radius: 8px;
+        background: var(--amber); color: var(--ink);
+        display: flex; align-items: center; justify-content: center;
+        font-size: 1.05rem; flex-shrink: 0;
+    }
+    .sb-brand-text { font-family: 'Lora', serif; font-size: 1.1rem; font-weight: 700; color: #fff; }
+    .sb-brand-text em { font-style: italic; color: var(--amber); }
+    .sb-brand-sub { font-size: .65rem; font-weight: 600; letter-spacing: .1em; text-transform: uppercase; color: #6b5f50; margin-top: .05rem; }
+
+    /* Nav groups */
+    .sb-nav { padding: 1rem 0; flex: 1; }
+    .sb-nav-label {
+        font-size: .62rem; font-weight: 700; letter-spacing: .13em;
+        text-transform: uppercase; color: #4a3e32;
+        padding: .75rem 1.5rem .3rem;
+    }
+    .sb-link {
+        display: flex; align-items: center; gap: .7rem;
+        padding: .6rem 1.5rem;
+        font-size: .875rem; font-weight: 500;
+        color: #9a8870; text-decoration: none;
+        border-left: 3px solid transparent;
+        transition: color .18s, background .18s, border-color .18s;
+    }
+    .sb-link i { font-size: 1rem; width: 20px; text-align: center; }
+    .sb-link:hover { color: #fff; background: rgba(255,255,255,.05); }
+    .sb-link.active {
+        color: #fff;
+        background: rgba(201,129,58,.12);
+        border-left-color: var(--amber);
+    }
+    .sb-link.active i { color: var(--amber); }
+    .sb-badge {
+        margin-left: auto; font-size: .65rem; font-weight: 700;
+        background: var(--amber); color: #fff;
+        padding: .15em .55em; border-radius: 20px;
+    }
+
+    /* Sidebar logout */
+    .sb-footer {
+        padding: 1rem 1.5rem;
+        border-top: 1px solid rgba(255,255,255,.07);
+    }
+    .sb-logout {
+        display: flex; align-items: center; gap: .7rem;
+        padding: .55rem .9rem;
+        font-size: .875rem; font-weight: 500;
+        color: #9a8870; border: 1px solid rgba(255,255,255,.08);
+        border-radius: 8px; background: none; width: 100%;
+        cursor: pointer; text-decoration: none;
+        transition: color .18s, background .18s, border-color .18s;
+    }
+    .sb-logout:hover { color: #ff6b6b; background: rgba(220,38,38,.12); border-color: rgba(220,38,38,.25); }
+
+    /* ── Topbar ───────────────────────────────────────────── */
+    .admin-topbar {
+        position: fixed; top: 0; left: var(--sidebar-w); right: 0;
+        height: var(--top-h);
+        background: #fff;
+        border-bottom: 1px solid var(--border);
+        display: flex; align-items: center; justify-content: space-between;
+        padding: 0 1.75rem;
+        z-index: 1030;
+        box-shadow: 0 1px 8px rgba(60,40,10,.06);
+        transition: left .3s cubic-bezier(.4,0,.2,1);
+    }
+
+    .topbar-left { display: flex; align-items: center; gap: 1rem; }
+    .topbar-page-title { font-family: 'Lora', serif; font-size: 1.1rem; font-weight: 700; color: var(--ink); }
+    .topbar-breadcrumb { font-size: .78rem; color: var(--muted); }
+
+    /* Topbar search */
+    .topbar-search {
+        position: relative; display: flex; align-items: center;
+    }
+    .topbar-search i { position: absolute; left: .75rem; color: var(--muted); font-size: .9rem; pointer-events: none; }
+    .topbar-search input {
+        border: 1.5px solid var(--border);
+        border-radius: 24px; padding: .4rem 1rem .4rem 2.2rem;
+        font-size: .84rem; background: var(--cream);
+        width: 220px; transition: border-color .2s, width .3s;
+        outline: none;
+    }
+    .topbar-search input:focus { border-color: var(--amber); width: 280px; background: #fff; }
+
+    /* Topbar right actions */
+    .topbar-right { display: flex; align-items: center; gap: .5rem; }
+    .topbar-icon-btn {
+        width: 38px; height: 38px; border-radius: 10px;
+        background: var(--warm); border: 1px solid var(--border);
+        display: flex; align-items: center; justify-content: center;
+        color: var(--muted); font-size: 1rem;
+        cursor: pointer; text-decoration: none; position: relative;
+        transition: background .18s, color .18s;
+    }
+    .topbar-icon-btn:hover { background: var(--amber-lt); color: var(--amber); }
+    .topbar-notif-dot {
+        position: absolute; top: 6px; right: 6px;
+        width: 8px; height: 8px; border-radius: 50%;
+        background: var(--red); border: 2px solid #fff;
+    }
+
+    /* Admin profile pill */
+    .topbar-profile {
+        display: flex; align-items: center; gap: .5rem;
+        padding: .3rem .75rem .3rem .4rem;
+        border: 1px solid var(--border); border-radius: 24px;
+        background: var(--warm); cursor: pointer;
+        text-decoration: none;
+        transition: border-color .18s, background .18s;
+    }
+    .topbar-profile:hover { border-color: var(--amber); background: var(--amber-lt); }
+    .topbar-avatar {
+        width: 28px; height: 28px; border-radius: 50%;
+        background: var(--ink); color: var(--amber);
+        font-size: .78rem; font-weight: 700;
+        display: flex; align-items: center; justify-content: center;
+    }
+    .topbar-name { font-size: .84rem; font-weight: 600; color: var(--ink); }
+
+    /* Mobile toggle */
+    .sb-toggle {
+        display: none; width: 38px; height: 38px;
+        border-radius: 10px; background: var(--warm);
+        border: 1px solid var(--border); align-items: center;
+        justify-content: center; color: var(--ink);
+        font-size: 1.1rem; cursor: pointer;
+    }
+
+    /* ── Main content ─────────────────────────────────────── */
+    .admin-main {
+        margin-left: var(--sidebar-w);
+        margin-top: var(--top-h);
+        padding: 2rem 1.75rem;
+        min-height: calc(100vh - var(--top-h));
+        transition: margin-left .3s;
+    }
+
+    /* ── Overlay (mobile) ─────────────────────────────────── */
+    .sb-overlay {
+        display: none; position: fixed; inset: 0;
+        background: rgba(0,0,0,.45); z-index: 1035;
+    }
+    .sb-overlay.show { display: block; }
+
+    /* ── Shared component tokens ──────────────────────────── */
+    .admin-card {
+        background: #fff; border: 1px solid var(--border);
+        border-radius: 14px;
+        box-shadow: 0 2px 10px rgba(60,40,10,.07);
+        overflow: hidden;
+    }
+    .admin-card-header {
+        padding: 1rem 1.25rem;
+        background: #fdf9f5;
+        border-bottom: 1px solid var(--border);
+        display: flex; align-items: center; justify-content: space-between; gap: 1rem; flex-wrap: wrap;
+    }
+    .admin-card-title { font-family: 'Lora', serif; font-size: 1rem; font-weight: 600; color: var(--ink); margin: 0; }
+
+    /* Stat cards */
+    .stat-card {
+        background: #fff; border: 1px solid var(--border);
+        border-radius: 14px;
+        padding: 1.4rem 1.5rem;
+        box-shadow: 0 2px 10px rgba(60,40,10,.07);
+        transition: transform .2s, box-shadow .2s;
+        position: relative; overflow: hidden;
+    }
+    .stat-card:hover { transform: translateY(-2px); box-shadow: 0 6px 22px rgba(60,40,10,.11); }
+    .stat-card-icon {
+        width: 48px; height: 48px; border-radius: 12px;
+        display: flex; align-items: center; justify-content: center;
+        font-size: 1.35rem; margin-bottom: .9rem;
+    }
+    .stat-card-num { font-family: 'Lora', serif; font-size: 1.9rem; font-weight: 700; color: var(--ink); line-height: 1; }
+    .stat-card-label { font-size: .78rem; font-weight: 600; text-transform: uppercase; letter-spacing: .07em; color: var(--muted); margin-top: .25rem; }
+    .stat-card-trend { font-size: .75rem; font-weight: 600; margin-top: .6rem; }
+    .trend-up   { color: var(--green); }
+    .trend-down { color: var(--red); }
+    .stat-card-glow {
+        position: absolute; bottom: -20px; right: -20px;
+        width: 90px; height: 90px; border-radius: 50%;
+        opacity: .07; pointer-events: none;
+    }
+
+    .si-amber { background: var(--amber-lt); color: var(--amber); }
+    .si-green  { background: var(--green-lt); color: var(--green); }
+    .si-blue   { background: var(--blue-lt);  color: var(--blue); }
+    .si-red    { background: var(--red-lt);   color: var(--red); }
+    .si-ink    { background: #f1ece4; color: var(--ink); }
+    .si-teal   { background: #e0f7f4; color: #0d9488; }
+
+    /* Admin tables */
+    .admin-table { margin: 0; width: 100%; }
+    .admin-table thead th {
+        font-size: .7rem; font-weight: 700;
+        text-transform: uppercase; letter-spacing: .07em;
+        color: var(--muted); background: #fdf9f5;
+        border-bottom: 1px solid var(--border);
+        padding: .8rem 1rem;
+        white-space: nowrap;
+    }
+    .admin-table tbody td {
+        padding: .75rem 1rem; border-bottom: 1px solid #f5ede4;
+        vertical-align: middle; font-size: .875rem;
+    }
+    .admin-table tbody tr:last-child td { border-bottom: none; }
+    .admin-table tbody tr:hover { background: #fdf9f5; }
+
+    /* Status badges */
+    .badge-returned  { background: var(--green-lt); color: var(--green); font-weight: 700; font-size: .72rem; padding: .28em .7em; border-radius: 20px; }
+    .badge-active    { background: var(--amber-lt); color: var(--amber); font-weight: 700; font-size: .72rem; padding: .28em .7em; border-radius: 20px; }
+    .badge-late      { background: var(--red-lt);   color: var(--red);   font-weight: 700; font-size: .72rem; padding: .28em .7em; border-radius: 20px; }
+    .badge-enabled   { background: var(--green-lt); color: var(--green); font-weight: 700; font-size: .72rem; padding: .28em .7em; border-radius: 20px; }
+    .badge-disabled  { background: var(--red-lt);   color: var(--red);   font-weight: 700; font-size: .72rem; padding: .28em .7em; border-radius: 20px; }
+
+    /* Toast container */
+    .toast-container { position: fixed; top: 80px; right: 1.5rem; z-index: 1100; }
+
+    /* Section eyebrow */
+    .admin-eyebrow { font-size: .7rem; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; color: var(--amber); margin-bottom: .3rem; }
+    .admin-section-title { font-family: 'Lora', serif; font-size: 1.35rem; font-weight: 700; color: var(--ink); margin-bottom: 0; }
+
+    /* Quick action buttons */
+    .qa-btn {
+        display: flex; flex-direction: column; align-items: center; gap: .5rem;
+        padding: 1.1rem .75rem;
+        background: #fff; border: 1px solid var(--border); border-radius: 12px;
+        color: var(--ink); text-decoration: none; font-size: .8rem; font-weight: 600;
+        transition: transform .18s, box-shadow .18s, border-color .18s;
+    }
+    .qa-btn:hover { transform: translateY(-2px); box-shadow: 0 6px 18px rgba(60,40,10,.1); border-color: var(--amber); color: var(--amber); }
+    .qa-btn i { font-size: 1.4rem; }
+
+    /* Filter chips */
+    .filter-chip {
+        border: 1.5px solid var(--border); border-radius: 24px;
+        padding: .35rem 1rem; font-size: .82rem; font-weight: 600;
+        background: #fff; color: var(--muted);
+        cursor: pointer; text-decoration: none; white-space: nowrap;
+        transition: all .18s;
+    }
+    .filter-chip:hover, .filter-chip.active { border-color: var(--amber); background: var(--amber-lt); color: var(--amber); }
+
+    /* Thumb */
+    .row-thumb { width: 38px; height: 50px; object-fit: cover; border-radius: 4px; border: 1px solid var(--border); }
+    .row-thumb-ph {
+        width: 38px; height: 50px; border-radius: 4px; border: 1px solid var(--border);
+        background: var(--warm); display: flex; align-items: center; justify-content: center;
+        font-size: .9rem; color: var(--muted);
+    }
+
+    /* User avatar */
+    .user-avatar-sm {
+        width: 36px; height: 36px; border-radius: 50%;
+        background: var(--ink); color: var(--amber);
+        font-size: .8rem; font-weight: 700;
+        display: flex; align-items: center; justify-content: center;
+        flex-shrink: 0;
+    }
+    .user-avatar-img { width: 36px; height: 36px; border-radius: 50%; object-fit: cover; }
+
+    /* ── Responsive ───────────────────────────────────────── */
+    @@media (max-width: 991px) {
+        .admin-sidebar { transform: translateX(-100%); }
+        .admin-sidebar.open { transform: translateX(0); }
+        .admin-topbar { left: 0; }
+        .admin-main   { margin-left: 0; }
+        .sb-toggle    { display: flex; }
+        .topbar-search input { width: 160px; }
+        .topbar-search input:focus { width: 200px; }
+    }
+    @@media (max-width: 576px) {
+        .admin-main { padding: 1.25rem 1rem; }
+        .topbar-search { display: none; }
+    }
+    </style>
+</head>
+<body>
+
+<!-- ── Sidebar Overlay (mobile) ── -->
+<div class="sb-overlay " id="sbOverlay" onclick="closeSidebar()"></div>
+
+<!-- ═══════════════════ SIDEBAR ═══════════════════ -->
+<aside class="admin-sidebar" id="adminSidebar">
+    <!-- Brand -->
+    <a class="sb-brand" asp-controller="Home" asp-action="Index">
+        <div class="sb-brand-icon"><i class="bi bi-book-half"></i></div>
+        <div>
+            <div class="sb-brand-text">Biblio<em>theca</em></div>
+            <div class="sb-brand-sub">Admin Panel</div>
+        </div>
+    </a>
+
+    <!-- Navigation -->
+    <nav class="sb-nav">
+        <div class="sb-nav-label">Main</div>
+
+        <a class="sb-link @(ViewContext.RouteData.Values["action"]?.ToString() == "Dashboard" ? "active" : "")"
+           asp-controller="Admin" asp-action="Dashboard">
+            <i class="bi bi-speedometer2"></i> Dashboard
+        </a>
+
+        <a class="sb-link @(ViewContext.RouteData.Values["controller"]?.ToString() == "Book" ? "active" : "")"
+           asp-controller="Book" asp-action="Index">
+            <i class="bi bi-book"></i> Books
+        </a>
+
+        <a class="sb-link @(ViewContext.RouteData.Values["action"]?.ToString() == "Borrowings" ? "active" : "")"
+           asp-controller="Admin" asp-action="Borrowings">
+            <i class="bi bi-bookmark-check"></i> Borrowings
+        </a>
+
+        <a class="sb-link @(ViewContext.RouteData.Values["action"]?.ToString() is "Users" or "UserHistory" ? "active" : "")"
+           asp-controller="Admin" asp-action="Users">
+            <i class="bi bi-people"></i> Users
+        </a>
+
+        <div class="sb-nav-label" style="margin-top:.5rem">Settings</div>
+
+        <a class="sb-link" asp-controller="Home" asp-action="Privacy">
+            <i class="bi bi-shield-check"></i> Privacy
+        </a>
+    </nav>
+
+    <!-- Logout -->
+    <div class="sb-footer">
+        <form asp-controller="Auth" asp-action="Logout" method="post">
+            @Html.AntiForgeryToken()
+            <button type="submit" class="sb-logout">
+                <i class="bi bi-box-arrow-left"></i> Logout
+            </button>
+        </form>
+    </div>
+</aside>
+
+<!-- ═══════════════════ TOPBAR ════════════════════ -->
+<div class="admin-topbar">
+    <div class="topbar-left">
+        <button class="sb-toggle" onclick="openSidebar()" aria-label="Toggle sidebar">
+            <i class="bi bi-list"></i>
+        </button>
+        <div>
+            <div class="topbar-page-title">@(ViewData["Title"] ?? "Dashboard")</div>
+        </div>
+    </div>
+
+    <div class="topbar-right">
+        @* <!-- Search -->
+        <div class="topbar-search d-none d-md-flex">
+            <i class="bi bi-search"></i>
+            <input type="text" placeholder="Quick search…" id="topbarSearch" />
+        </div> *@
+
+        @* <!-- Notification -->
+        <a class="topbar-icon-btn" href="#" title="Notifications">
+            <i class="bi bi-bell"></i>
+            <span class="topbar-notif-dot"></span>
+        </a> *@
+
+        <!-- Profile -->
+        <a class="topbar-profile" asp-controller="Admin" asp-action="Dashboard">
+            <div class="topbar-avatar">
+             @(currentUser?.FullName?.Length > 0
+             ? currentUser.FullName[0].ToString().ToUpper()
+             : "U")            
+         </div>
+            <span class="topbar-name d-none d-sm-inline">@(currentUser?.FullName ?? "Admin")</span>
+        </a>
+    </div>
+</div>
+
+<!-- ═══════════════════ MAIN ══════════════════════ -->
+<main class="admin-main">
+
+    <!-- Toast notifications -->
+    <div class="toast-container" id="toastContainer">
+        @if (TempData["Success"] != null)
+        {
+            <div class="toast align-items-center text-bg-success border-0 show" role="alert" data-bs-autohide="true" data-bs-delay="4000">
+                <div class="d-flex">
+                    <div class="toast-body"><i class="bi bi-check-circle-fill me-2"></i>@TempData["Success"]</div>
+                    <button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast"></button>
+                </div>
+            </div>
+        }
+        @if (TempData["Error"] != null)
+        {
+            <div class="toast align-items-center text-bg-danger border-0 show" role="alert" data-bs-autohide="true" data-bs-delay="5000">
+                <div class="d-flex">
+                    <div class="toast-body"><i class="bi bi-exclamation-circle-fill me-2"></i>@TempData["Error"]</div>
+                    <button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast"></button>
+                </div>
+            </div>
+        }
+    </div>
+
+    @RenderBody()
+</main>
+
+<!-- Scripts -->
+<script src="~/lib/jquery/dist/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/jquery.validation/1.19.5/jquery.validate.min.js"></script>
+<script src="https://cdn.jsdelivr.net/jquery.validation.unobtrusive/3.2.12/jquery.validate.unobtrusive.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.3/dist/chart.umd.min.js"></script>
+<script>
+    // ── Sidebar toggle ──
+    function openSidebar()  { document.getElementById('adminSidebar').classList.add('open'); document.getElementById('sbOverlay').classList.add('show'); }
+    function closeSidebar() { document.getElementById('adminSidebar').classList.remove('open'); document.getElementById('sbOverlay').classList.remove('show'); }
+
+    // ── Auto-init toasts ──
+    document.querySelectorAll('.toast').forEach(el => new bootstrap.Toast(el).show());
+</script>
+@await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>

@@ -1,0 +1,144 @@
+/* ============================================================
+   Bibliotheca – site.css
+   Global overrides that work alongside the layout tokens.
+   ============================================================ */
+
+/* ── Reset ── */
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+/* ── Base Typography ── */
+body {
+    font-family: 'DM Sans', sans-serif;
+    background: #faf7f2;
+    color: #1c1410;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Lora', serif;
+    font-weight: 700;
+    line-height: 1.25;
+}
+
+a {
+    color: #c9813a;
+    transition: color .18s;
+}
+
+    a:hover {
+        color: #a3641e;
+    }
+
+/* ── Bootstrap Overrides ── */
+.btn-primary {
+    background: #c9813a;
+    border-color: #c9813a;
+    font-weight: 600;
+}
+
+    .btn-primary:hover,
+    .btn-primary:focus {
+        background: #a3641e;
+        border-color: #a3641e;
+        box-shadow: 0 0 0 3px rgba(201,129,58,.25);
+    }
+
+.btn-secondary {
+    background: #f5efe4;
+    border-color: #e8dfd0;
+    color: #1c1410;
+    font-weight: 600;
+}
+
+    .btn-secondary:hover {
+        background: #e8dfd0;
+        border-color: #d6cabc;
+        color: #1c1410;
+    }
+
+.form-control:focus,
+.form-select:focus {
+    border-color: #c9813a;
+    box-shadow: 0 0 0 3px rgba(201,129,58,.15);
+}
+
+/* ── Scrollbar ── */
+::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+}
+
+::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #d6ccbe;
+    border-radius: 3px;
+}
+
+    ::-webkit-scrollbar-thumb:hover {
+        background: #a89880;
+    }
+
+/* ── Alert Styling ── */
+.alert {
+    border: none;
+    border-radius: 10px;
+    font-size: .9rem;
+}
+
+.alert-success {
+    background: #e6f5ed;
+    color: #166534;
+}
+
+.alert-danger {
+    background: #fdecea;
+    color: #991b1b;
+}
+
+.alert-warning {
+    background: #fef9e7;
+    color: #92400e;
+}
+
+/* ── Card defaults ── */
+.card {
+    border: 1px solid #e8dfd0;
+    border-radius: 14px;
+    box-shadow: 0 2px 10px rgba(60,40,10,.07);
+}
+
+.card-header {
+    background: #f8f4ef;
+    border-bottom: 1px solid #e8dfd0;
+    font-weight: 600;
+}
+
+/* ── Badges ── */
+.badge {
+    font-weight: 600;
+    letter-spacing: .03em;
+}
+
+/* ── Transition helper ── */
+.transition {
+    transition: all .2s ease;
+}
+
+/* ── Legacy classes kept for compatibility ── */
+.border-top {
+    border-top: 1px solid #e8dfd0 !important;
+}
+
+.border-bottom {
+    border-bottom: 1px solid #e8dfd0 !important;
+}
+
+.box-shadow {
+    box-shadow: 0 .25rem .75rem rgba(60,40,10,.07);
+}

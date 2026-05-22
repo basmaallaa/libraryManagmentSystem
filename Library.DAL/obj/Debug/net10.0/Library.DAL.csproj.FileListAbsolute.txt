@@ -1,0 +1,14 @@
+D:\ITILab\MVC\LibraryManagmentSystem\Library.DAL\bin\Debug\net10.0\Library.DAL.deps.json
+D:\ITILab\MVC\LibraryManagmentSystem\Library.DAL\bin\Debug\net10.0\Library.DAL.runtimeconfig.json
+D:\ITILab\MVC\LibraryManagmentSystem\Library.DAL\bin\Debug\net10.0\Library.DAL.dll
+D:\ITILab\MVC\LibraryManagmentSystem\Library.DAL\bin\Debug\net10.0\Library.DAL.pdb
+D:\ITILab\MVC\LibraryManagmentSystem\Library.DAL\obj\Debug\net10.0\Library.DAL.csproj.AssemblyReference.cache
+D:\ITILab\MVC\LibraryManagmentSystem\Library.DAL\obj\Debug\net10.0\Library.DAL.GeneratedMSBuildEditorConfig.editorconfig
+D:\ITILab\MVC\LibraryManagmentSystem\Library.DAL\obj\Debug\net10.0\Library.DAL.AssemblyInfoInputs.cache
+D:\ITILab\MVC\LibraryManagmentSystem\Library.DAL\obj\Debug\net10.0\Library.DAL.AssemblyInfo.cs
+D:\ITILab\MVC\LibraryManagmentSystem\Library.DAL\obj\Debug\net10.0\Library.DAL.csproj.CoreCompileInputs.cache
+D:\ITILab\MVC\LibraryManagmentSystem\Library.DAL\obj\Debug\net10.0\Library.DAL.dll
+D:\ITILab\MVC\LibraryManagmentSystem\Library.DAL\obj\Debug\net10.0\refint\Library.DAL.dll
+D:\ITILab\MVC\LibraryManagmentSystem\Library.DAL\obj\Debug\net10.0\Library.DAL.pdb
+D:\ITILab\MVC\LibraryManagmentSystem\Library.DAL\obj\Debug\net10.0\Library.DAL.genruntimeconfig.cache
+D:\ITILab\MVC\LibraryManagmentSystem\Library.DAL\obj\Debug\net10.0\ref\Library.DAL.dll

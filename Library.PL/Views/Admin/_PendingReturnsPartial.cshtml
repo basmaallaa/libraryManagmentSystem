@@ -1,0 +1,250 @@
+@model IEnumerable<Library.BLL.ModelVM.Borrow.PendingReturnVM>
+
+@{
+    var pending = Model?.ToList() ?? new List<Library.BLL.ModelVM.Borrow.PendingReturnVM>();
+}
+
+@if (!pending.Any())
+{
+    <!-- No pending requests — nothing rendered, section hidden -->
+    return;
+}
+
+<!-- ══════════════════════════════════════════════════════════
+     PENDING RETURN REQUESTS — Admin Action Required
+══════════════════════════════════════════════════════════ -->
+<div class="pending-returns-panel mb-4">
+
+    <!-- Panel header -->
+    <div class="pr-panel-header">
+        <div class="pr-alert-icon">
+            <i class="bi bi-hourglass-split"></i>
+        </div>
+        <div class="pr-panel-title-wrap">
+            <div class="pr-panel-eyebrow">Action Required</div>
+            <h2 class="pr-panel-title">Pending Return Requests</h2>
+        </div>
+        <span class="pr-count-badge">@pending.Count</span>
+    </div>
+
+    <!-- Cards grid -->
+    <div class="pr-grid">
+        @foreach (var r in pending)
+        {
+            <div class="pr-card">
+                <!-- Book cover -->
+                <div class="pr-cover-wrap">
+                    @if (!string.IsNullOrEmpty(r.BookImage))
+                    { <img src="~/files/@r.BookImage" alt="@r.BookTitle" class="pr-cover-img" /> }
+                    else
+                    { <div class="pr-cover-ph"><i class="bi bi-book-fill"></i></div> }
+                </div>
+
+                <!-- Info -->
+                <div class="pr-card-body">
+                    <div class="pr-book-title" title="@r.BookTitle">@r.BookTitle</div>
+
+                    <div class="pr-user-row">
+                        <div class="pr-user-avatar">
+                            @(r.UserName.Length > 0 ? r.UserName[0].ToString().ToUpper() : "U")
+                        </div>
+                        <div class="pr-user-info">
+                            <span class="pr-user-name">@r.UserName</span>
+                            <span class="pr-user-email">@r.UserEmail</span>
+                        </div>
+                    </div>
+
+                    <div class="pr-meta-row">
+                        <div class="pr-meta-item">
+                            <span class="pr-meta-label">Borrowed</span>
+                            <span class="pr-meta-value">@r.BorrowDate.ToString("dd MMM yyyy")</span>
+                        </div>
+                        <div class="pr-meta-item">
+                            <span class="pr-meta-label">Days Out</span>
+                            <span class="pr-meta-value @(r.DaysOut > 14 ? "pr-days-late" : "")">
+                                @r.DaysOut d @(r.DaysOut > 14 ? "⚠" : "")
+                            </span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Confirm action -->
+                <div class="pr-card-footer">
+                    <button type="button"
+                            class="btn-confirm-return w-100"
+                            onclick="confirmMarkReturned(@r.BorrowId, '@Html.Raw(r.BookTitle.Replace("'","\'"))', '@Html.Raw(r.UserName.Replace("'","\'"))')">
+                        <i class="bi bi-check2-circle me-2"></i>Confirm Return
+                    </button>
+                </div>
+            </div>
+        }
+    </div>
+</div>
+
+<!-- Confirm Return Modal (shared, rendered once) -->
+<div class="modal fade" id="confirmReturnModal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-sm">
+        <div class="modal-content" style="border:none;border-radius:16px;box-shadow:0 20px 60px rgba(0,0,0,.15)">
+            <div class="modal-body text-center p-4">
+                <div class="cr-icon-wrap">
+                    <i class="bi bi-check2-circle"></i>
+                </div>
+                <h5 class="fw-bold mt-3 mb-1">Confirm Return?</h5>
+                <p class="text-muted small mb-1">
+                    Confirming the return of<br>
+                    <strong id="crBookTitle"></strong>
+                </p>
+                <p class="text-muted small mb-3">
+                    by <strong id="crUserName"></strong>
+                </p>
+                <div class="cr-consequence-note">
+                    <i class="bi bi-info-circle me-1"></i>
+                    This will mark the loan as returned and add +1 to the book's available quantity.
+                </div>
+                <form asp-controller="Admin" asp-action="MarkReturned" method="post">
+                    @Html.AntiForgeryToken()
+                    <input type="hidden" id="crBorrowId" name="BorrowId" value="" />
+                    <div class="d-flex gap-2 justify-content-center mt-3">
+                        <button type="button" class="btn btn-light btn-sm px-4" data-bs-dismiss="modal">Cancel</button>
+                        <button type="submit" class="btn-confirm-sm btn-sm px-4">
+                            <i class="bi bi-check-lg me-1"></i>Confirm
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+<style>
+    /* ── Pending Panel ── */
+    .pending-returns-panel {
+        border: 2px solid #fde68a;
+        border-radius: 16px;
+        overflow: hidden;
+        background: #fffbf0;
+        box-shadow: 0 4px 20px rgba(180,83,9,.1);
+    }
+
+    .pr-panel-header {
+        background: linear-gradient(135deg, #78350f, #b45309);
+        padding: 1rem 1.5rem;
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+    }
+    .pr-alert-icon {
+        width: 40px; height: 40px;
+        background: rgba(255,255,255,.15);
+        border-radius: 10px;
+        display: flex; align-items: center; justify-content: center;
+        font-size: 1.25rem; color: #fde68a;
+        flex-shrink: 0;
+        animation: hourglassPulse 2s ease-in-out infinite;
+    }
+    @@keyframes hourglassPulse {
+        0%,100% { transform: rotate(0deg); opacity: 1; }
+        50%      { transform: rotate(180deg); opacity: .8; }
+    }
+    .pr-panel-eyebrow { font-size: .65rem; font-weight: 700; text-transform: uppercase; letter-spacing: .12em; color: #fde68a; margin-bottom: .1rem; }
+    .pr-panel-title   { font-family: 'Lora', serif; font-size: 1rem; font-weight: 700; color: #fff; margin: 0; }
+    .pr-count-badge   { margin-left: auto; background: #fde68a; color: #78350f; font-size: .82rem; font-weight: 800; padding: .2em .75em; border-radius: 20px; flex-shrink: 0; }
+
+    /* ── Cards grid ── */
+    .pr-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+        gap: 1px;
+        background: #fde68a;
+        padding: 1px;
+    }
+
+    /* ── Individual card ── */
+    .pr-card {
+        background: #fff;
+        display: flex;
+        flex-direction: column;
+        transition: background .18s;
+    }
+    .pr-card:hover { background: #fdf9f0; }
+
+    /* Cover */
+    .pr-cover-wrap {
+        height: 140px;
+        overflow: hidden;
+        background: linear-gradient(135deg, #2c1a0e, #5a3010);
+        position: relative;
+    }
+    .pr-cover-img { width: 100%; height: 100%; object-fit: cover; filter: brightness(.9); transition: transform .4s; }
+    .pr-card:hover .pr-cover-img { transform: scale(1.05); }
+    .pr-cover-ph {
+        width: 100%; height: 100%;
+        display: flex; align-items: center; justify-content: center;
+        font-size: 2.5rem; color: #e8a84a;
+    }
+
+    /* Body */
+    .pr-card-body { padding: .9rem 1rem .5rem; flex: 1; }
+    .pr-book-title {
+        font-family: 'Lora', serif; font-size: .88rem; font-weight: 600;
+        color: #1c1410; margin-bottom: .65rem;
+        display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden;
+    }
+    .pr-user-row { display: flex; align-items: center; gap: .5rem; margin-bottom: .65rem; }
+    .pr-user-avatar {
+        width: 28px; height: 28px; border-radius: 50%;
+        background: #1c1410; color: #c9813a;
+        font-size: .72rem; font-weight: 700;
+        display: flex; align-items: center; justify-content: center;
+        flex-shrink: 0;
+    }
+    .pr-user-info { display: flex; flex-direction: column; min-width: 0; }
+    .pr-user-name  { font-size: .8rem; font-weight: 600; color: #1c1410; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+    .pr-user-email { font-size: .7rem; color: #7a6e62; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+
+    .pr-meta-row   { display: flex; justify-content: space-between; gap: .5rem; }
+    .pr-meta-item  { display: flex; flex-direction: column; }
+    .pr-meta-label { font-size: .62rem; font-weight: 700; text-transform: uppercase; letter-spacing: .07em; color: #7a6e62; }
+    .pr-meta-value { font-size: .76rem; font-weight: 600; color: #1c1410; }
+    .pr-days-late  { color: #dc2626; }
+
+    /* Footer */
+    .pr-card-footer { padding: .7rem 1rem .9rem; }
+    .btn-confirm-return {
+        display: block; text-align: center;
+        background: #2d7a4f; color: #fff; border: none;
+        border-radius: 8px; font-size: .8rem; font-weight: 700;
+        padding: .5rem; cursor: pointer;
+        transition: background .18s, transform .12s;
+    }
+    .btn-confirm-return:hover { background: #1f5c38; transform: translateY(-1px); }
+
+    /* Confirm modal */
+    .cr-icon-wrap {
+        width: 60px; height: 60px; border-radius: 50%;
+        background: #e6f5ed; color: #2d7a4f;
+        font-size: 1.6rem; display: flex; align-items: center; justify-content: center;
+        margin: 0 auto;
+    }
+    .cr-consequence-note {
+        font-size: .76rem; color: #1e40af;
+        background: #dbeafe; border: 1px solid #bfdbfe;
+        border-radius: 8px; padding: .5rem .75rem;
+        line-height: 1.5; margin-top: .5rem;
+    }
+    .btn-confirm-sm {
+        background: #2d7a4f; color: #fff; border: none;
+        border-radius: 8px; font-weight: 600; padding: .4rem 1rem;
+        cursor: pointer; transition: background .2s;
+    }
+    .btn-confirm-sm:hover { background: #1f5c38; color: #fff; }
+</style>
+
+<script>
+    function confirmMarkReturned(borrowId, bookTitle, userName) {
+        document.getElementById('crBorrowId').value      = borrowId;
+        document.getElementById('crBookTitle').textContent = bookTitle;
+        document.getElementById('crUserName').textContent  = userName;
+        new bootstrap.Modal(document.getElementById('confirmReturnModal')).show();
+    }
+</script>

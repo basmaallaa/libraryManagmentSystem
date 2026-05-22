@@ -1,0 +1,219 @@
+@model Library.BLL.ModelVM.Admin.BorrowRecordListVM
+@using Library.BLL.ModelVM.Borrow
+@{
+    ViewData["Title"] = "Borrowings";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+    var all       = Model.Records?.ToList() ?? new List<Library.BLL.ModelVM.Admin.BorrowRecordRowVM>();
+    var active    = all.Count(r => !r.IsReturned);
+    var returned  = all.Count(r =>  r.IsReturned);
+    var late      = all.Count(r => r.IsLate);
+
+    // Pending returns passed via ViewBag from AdminController
+    var pendingReturns = ViewBag.PendingReturns as IEnumerable<PendingReturnVM>
+                         ?? Enumerable.Empty<PendingReturnVM>();
+    var pendingCount   = pendingReturns.Count();
+}
+
+<!-- ── Header ── -->
+<div class="d-flex align-items-center justify-content-between mb-4 flex-wrap gap-2">
+    <div>
+        <p class="admin-eyebrow mb-0">Management</p>
+        <h1 class="admin-section-title">Borrow Records</h1>
+    </div>
+    <div class="d-flex gap-2 flex-wrap">
+        @if (pendingCount > 0)
+        {
+            <span class="stat-chip" style="background:#fef3c7;color:#b45309;animation:pendingPulse 2s ease-in-out infinite">
+                <i class="bi bi-hourglass-split me-1"></i>@pendingCount Pending Return@(pendingCount > 1 ? "s" : "")
+            </span>
+        }
+        <span class="stat-chip stat-chip--amber"><i class="bi bi-bookmark me-1"></i>@active Active</span>
+        <span class="stat-chip stat-chip--green"><i class="bi bi-check2 me-1"></i>@returned Returned</span>
+        @if (late > 0)
+        {
+            <span class="stat-chip stat-chip--red"><i class="bi bi-clock-history me-1"></i>@late Late</span>
+        }
+    </div>
+</div>
+
+<!-- ══ PENDING RETURNS PANEL ════════════════════════════════ -->
+@if (pendingCount > 0)
+{
+    <partial name="_PendingReturnsPartial" model="pendingReturns" />
+}
+
+<!-- ── Search & Filter ── -->
+<form method="get" asp-action="Borrowings" asp-controller="Admin" class="admin-card mb-4 p-3">
+    <div class="row g-2 align-items-end">
+        <div class="col-sm-4">
+            <label class="filter-label-sm">Search User</label>
+            <div class="input-group input-group-sm">
+                <span class="input-group-text bg-transparent border-end-0"><i class="bi bi-person text-muted"></i></span>
+                <input type="text" name="searchUser" value="@Model.SearchUser"
+                       class="form-control border-start-0" placeholder="Name or email…" style="border-radius:0 8px 8px 0" />
+            </div>
+        </div>
+        <div class="col-sm-4">
+            <label class="filter-label-sm">Search Book</label>
+            <div class="input-group input-group-sm">
+                <span class="input-group-text bg-transparent border-end-0"><i class="bi bi-book text-muted"></i></span>
+                <input type="text" name="searchBook" value="@Model.SearchBook"
+                       class="form-control border-start-0" placeholder="Book title…" style="border-radius:0 8px 8px 0" />
+            </div>
+        </div>
+        <div class="col-sm-2">
+            <label class="filter-label-sm">Status</label>
+            <select name="filterReturned" class="form-select form-select-sm" style="border-radius:8px">
+                <option value="">All</option>
+                <option value="false" selected=@(Model.FilterReturned == false ? "selected" : "")>Active</option>
+                <option value="true"  selected=@(Model.FilterReturned == true  ? "selected" : "")>Returned</option>
+            </select>
+        </div>
+        <div class="col-sm-2 d-flex gap-2">
+            <button type="submit" class="btn btn-sm w-100" style="background:var(--amber);color:#fff;border:none;border-radius:8px;font-weight:600;">
+                <i class="bi bi-funnel me-1"></i>Filter
+            </button>
+            <a asp-action="Borrowings" asp-controller="Admin" class="btn btn-sm btn-outline-secondary" style="border-radius:8px;">
+                <i class="bi bi-x"></i>
+            </a>
+        </div>
+    </div>
+</form>
+
+<!-- ── Table ── -->
+<div class="admin-card">
+    <div class="admin-card-header">
+        <h2 class="admin-card-title">
+            <i class="bi bi-bookmark-check me-2" style="color:var(--amber)"></i>
+            All Records
+            <span style="background:var(--amber-lt);color:var(--amber);font-size:.7rem;font-weight:700;padding:.15em .6em;border-radius:20px;margin-left:.5rem">@all.Count</span>
+        </h2>
+        <input type="text" id="borrowSearch" class="form-control form-control-sm"
+               style="max-width:220px;border-radius:8px" placeholder="Quick search…" />
+    </div>
+
+    <div class="table-responsive">
+        <table class="admin-table" id="borrowTable">
+            <thead>
+                <tr>
+                    <th>#</th>
+                    <th>Book</th>
+                    <th>User</th>
+                    <th>Borrowed</th>
+                    <th>Returned</th>
+                    <th>Days Out</th>
+                    <th class="text-center">Status</th>
+                    <th class="text-center" style="width:110px">Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                @if (!all.Any())
+                {
+                    <tr><td colspan="8" class="text-center py-5 text-muted">No records found</td></tr>
+                }
+                @{ int idx = 1; }
+                @foreach (var r in all)
+                {
+                    <tr>
+                        <td class="text-muted small">@(idx++)</td>
+                        <td>
+                            <div class="d-flex align-items-center gap-2">
+                                @if (!string.IsNullOrEmpty(r.BookImage))
+                                { <img src="~/files/@r.BookImage" class="row-thumb" alt="@r.BookTitle" /> }
+                                else
+                                { <div class="row-thumb-ph"><i class="bi bi-book"></i></div> }
+                                <span class="fw-semibold" style="font-size:.875rem">@r.BookTitle</span>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="fw-semibold" style="font-size:.875rem">@r.UserName</div>
+                            <div style="font-size:.76rem;color:var(--muted)">@r.UserEmail</div>
+                        </td>
+                        <td style="font-size:.82rem;color:var(--muted)">@r.BorrowDate.ToString("dd MMM yyyy")</td>
+                        <td style="font-size:.82rem;color:var(--muted)">
+                            @(r.ReturnDate.HasValue ? r.ReturnDate.Value.ToString("dd MMM yyyy") : "—")
+                        </td>
+                        <td class="text-center">
+                            <span style="font-size:.8rem;font-weight:600;color:@(r.IsLate ? "var(--red)" : "var(--muted)")">
+                                @r.DaysOut d
+                            </span>
+                        </td>
+                        <td class="text-center">
+                            @if (r.IsReturned)
+                            { <span class="badge-returned">Returned</span> }
+                            else if (r.IsLate)
+                            { <span class="badge-late"><i class="bi bi-clock me-1"></i>Late</span> }
+                            else
+                            { <span class="badge-active">Active</span> }
+                        </td>
+                        <td class="text-center">
+                            @if (!r.IsReturned)
+                            {
+                                <button type="button"
+                                        class="btn btn-sm"
+                                        style="background:var(--green-lt);color:var(--green);border:none;border-radius:6px;font-size:.78rem;font-weight:600;"
+                                        onclick="confirmReturn(@r.Id)">
+                                    <i class="bi bi-check2-circle me-1"></i>Return
+                                </button>
+                            }
+                            else
+                            {
+                                <span style="font-size:.75rem;color:var(--muted)"><i class="bi bi-check-all"></i> Done</span>
+                            }
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>
+
+<!-- ── Mark Returned Confirmation Modal ── -->
+<div class="modal fade" id="returnConfirmModal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-sm">
+        <div class="modal-content" style="border:none;border-radius:16px;box-shadow:0 20px 60px rgba(0,0,0,.15)">
+            <div class="modal-body text-center p-4">
+                <div style="width:60px;height:60px;border-radius:50%;background:var(--green-lt);color:var(--green);font-size:1.6rem;display:flex;align-items:center;justify-content:center;margin:0 auto 1rem">
+                    <i class="bi bi-bookmark-check-fill"></i>
+                </div>
+                <h5 class="fw-bold mb-1">Mark as Returned?</h5>
+                <p class="text-muted small mb-3">This will restore the book's quantity and close the borrow record.</p>
+                <form id="returnForm" asp-controller="Admin" asp-action="MarkReturned" method="post">                    @Html.AntiForgeryToken()
+                    <input type="hidden" id="returnBorrowId" name="borrowId" value="" />
+                    <div class="d-flex gap-2 justify-content-center">
+                        <button type="button" class="btn btn-sm btn-light px-4" data-bs-dismiss="modal">Cancel</button>
+                        <button type="submit" class="btn btn-sm px-4" style="background:var(--green);color:#fff;border:none;border-radius:8px;font-weight:600;">
+                            <i class="bi bi-check-lg me-1"></i>Confirm
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Styles {
+<style>
+    .filter-label-sm { font-size:.68rem;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:var(--muted);margin-bottom:.25rem;display:block; }
+    .stat-chip { font-size:.78rem;font-weight:700;padding:.28em .85em;border-radius:20px; }
+    .stat-chip--amber { background:var(--amber-lt);color:var(--amber); }
+    .stat-chip--green { background:var(--green-lt);color:var(--green); }
+    .stat-chip--red   { background:var(--red-lt);  color:var(--red);   }
+</style>
+}
+
+@section Scripts {
+<script>
+    function confirmReturn(id) {
+        document.getElementById('returnBorrowId').value = id;
+        new bootstrap.Modal(document.getElementById('returnConfirmModal')).show();
+    }
+
+    document.getElementById('borrowSearch').addEventListener('input', function () {
+        const q = this.value.toLowerCase();
+        document.querySelectorAll('#borrowTable tbody tr').forEach(row => {
+            row.style.display = row.textContent.toLowerCase().includes(q) ? '' : 'none';
+        });
+    });
+</script>
+}

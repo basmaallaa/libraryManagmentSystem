@@ -1,0 +1,678 @@
+﻿@using Library.BLL.ModelVM.Book
+@using Library.DAL.Enums
+@{
+    ViewData["Title"] = "Home";
+
+    // Sample book data — replace with real service data injected via ViewBag/ViewModel
+    var categories = Enum.GetValues<Category>().ToList();
+
+    // Demo books — in production inject this from ILibraryService via HomeController
+     var demoBooks = (ViewBag.FeaturedBooks as IEnumerable<BookVM>)
+                ?? Enumerable.Empty<BookVM>();
+    // {
+    //     new { Id=1, Title="The Great Gatsby",         Author="F. Scott Fitzgerald", Category=Category.Fiction,    Quantity=4,  Image=(string?)null },
+    //     new { Id=2, Title="To Kill a Mockingbird",    Author="Harper Lee",          Category=Category.Fiction,    Quantity=2,  Image=(string?)null },
+    //     new { Id=3, Title="1984",                     Author="George Orwell",       Category=Category.Fiction,    Quantity=6,  Image=(string?)null },
+    //     new { Id=4, Title="Brave New World",          Author="Aldous Huxley",       Category=Category.Fiction,    Quantity=3,  Image=(string?)null },
+    //     new { Id=5, Title="Sapiens",                  Author="Yuval Noah Harari",   Category=Category.History,    Quantity=5,  Image=(string?)null },
+    //     new { Id=6, Title="A Brief History of Time",  Author="Stephen Hawking",     Category=Category.Science,    Quantity=3,  Image=(string?)null },
+    //     new { Id=7, Title="The Art of War",           Author="Sun Tzu",             Category=Category.History,    Quantity=7,  Image=(string?)null },
+    //     new { Id=8, Title="Clean Code",               Author="Robert C. Martin",    Category=Category.Technology, Quantity=2,  Image=(string?)null },
+    //     new { Id=9, Title="The Innovators",           Author="Walter Isaacson",     Category=Category.Technology, Quantity=4,  Image=(string?)null },
+    //     new { Id=10,Title="Educated",                 Author="Tara Westover",       Category=Category.Programming, Quantity=3,  Image=(string?)null },
+    //     new { Id=11,Title="Atomic Habits",            Author="James Clear",         Category=Category.Programming, Quantity=8,  Image=(string?)null },
+    //     new { Id=12,Title="The Da Vinci Code",        Author="Dan Brown",           Category=Category.Fiction,    Quantity=5,  Image=(string?)null },
+    // };
+}
+
+<!-- ══════════════════════════════════════════════════════
+     HERO
+══════════════════════════════════════════════════════════ -->
+<section class="home-hero">
+    <div class="hero-bg-pattern"></div>
+    <div class="container hero-inner">
+        <div class="row align-items-center g-5">
+            <div class="col-lg-6">
+                <div class="hero-eyebrow">
+                    <span class="eyebrow-dot"></span>
+                    Welcome to Bibliotheca
+                </div>
+                <h1 class="hero-heading">
+                    Your world of <em>stories</em><br>starts here
+                </h1>
+                <p class="hero-body">
+                    Discover thousands of books across every genre. Borrow, read, and return — all managed seamlessly in one place.
+                </p>
+                <div class="hero-cta-row">
+                    @if (User.Identity?.IsAuthenticated == true)
+                    {
+                        <a asp-controller="Library" asp-action="Index" class="btn-hero-primary">
+                            <i class="bi bi-bookshelf me-2"></i>Browse Collection
+                        </a>
+                        <a asp-controller="Library" asp-action="MyBorrowedBooks" class="btn-hero-ghost">
+                            My Books <i class="bi bi-arrow-right ms-1"></i>
+                        </a>
+                    }
+                    else
+                    {
+                        <a asp-controller="Auth" asp-action="Register" class="btn-hero-primary">
+                            <i class="bi bi-person-plus me-2"></i>Get Started Free
+                        </a>
+                        <a asp-controller="Library" asp-action="Index" class="btn-hero-ghost">
+                            Browse Books <i class="bi bi-arrow-right ms-1"></i>
+                        </a>
+                    }
+                </div>
+            </div>
+            <div class="col-lg-6 d-none d-lg-flex justify-content-end">
+                <div class="hero-visual">
+                    <div class="hero-book-stack">
+                        <div class="hb hb-1"><i class="bi bi-book-fill"></i></div>
+                        <div class="hb hb-2"><i class="bi bi-journal-bookmark-fill"></i></div>
+                        <div class="hb hb-3"><i class="bi bi-journal-text"></i></div>
+                        <div class="hb hb-4"><i class="bi bi-book"></i></div>
+                        <div class="hero-orb"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ══════════════════════════════════════════════════════
+     STATS STRIP
+══════════════════════════════════════════════════════════ -->
+<section class="stats-strip">
+    <div class="container">
+        <div class="stats-grid">
+            <div class="stat-item">
+                <span class="stat-number">1,200<span class="stat-plus">+</span></span>
+                <span class="stat-label">Books Available</span>
+            </div>
+            <div class="stat-divider"></div>
+            <div class="stat-item">
+                <span class="stat-number">@categories.Count</span>
+                <span class="stat-label">Categories</span>
+            </div>
+            <div class="stat-divider"></div>
+            <div class="stat-item">
+                <span class="stat-number">500<span class="stat-plus">+</span></span>
+                <span class="stat-label">Active Members</span>
+            </div>
+            <div class="stat-divider"></div>
+            <div class="stat-item">
+                <span class="stat-number">24/7</span>
+                <span class="stat-label">Digital Access</span>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ══════════════════════════════════════════════════════
+     BOOKS SECTION (Category Filter + Cards)
+══════════════════════════════════════════════════════════ -->
+<section class="books-section">
+    <div class="container">
+
+        <!-- Section header -->
+        <div class="section-header-row">
+            <div>
+                <p class="section-eyebrow">Our Collection</p>
+                <h2 class="section-title">Featured Books</h2>
+            </div>
+            <a asp-controller="Library" asp-action="Index" class="btn-see-all">
+                View all books <i class="bi bi-arrow-right ms-1"></i>
+            </a>
+        </div>
+
+        <!-- Category Filter Tabs -->
+        <div class="cat-filter-wrap">
+            <div class="cat-pills" id="categoryPills">
+                <button class="cat-pill active" data-category="all">
+                    <i class="bi bi-grid me-1"></i>All
+                </button>
+                @foreach (var cat in categories)
+                {
+                    <button class="cat-pill" data-category="@cat.ToString().ToLower()">
+                        @GetCategoryIcon(cat) @cat
+                    </button>
+                }
+            </div>
+        </div>
+
+        <!-- Books Grid -->
+        <div class="feat-books-grid" id="featuredBooksGrid">
+            @foreach (var book in demoBooks)
+            {
+                var available = book.Quantity > 0;
+                <div class="feat-card" data-category="@book.Category.ToString().ToLower()">
+                    <div class="feat-cover">
+                        @if (!string.IsNullOrEmpty(book.ImagePath))
+                        {
+                            <img src="~/files/@book.ImagePath" alt="@book.Title" class="feat-cover-img" />
+                        }
+                        else
+                        {
+                            <div class="feat-cover-ph @GetCoverClass(book.Category)">
+                                <i class="bi bi-book-fill"></i>
+                                <span class="feat-cover-cat-label">@book.Category</span>
+                            </div>
+                        }
+                        @if (!available)
+                        {
+                            <div class="feat-ribbon feat-ribbon--out">Out</div>
+                        }
+                        else if (book.Quantity <= 2)
+                        {
+                            <div class="feat-ribbon feat-ribbon--low">@book.Quantity left</div>
+                        }
+                    </div>
+                    <div class="feat-body">
+                        <span class="feat-cat-tag">@book.Category</span>
+                        <h3 class="feat-title" title="@book.Title">@book.Title</h3>
+                        <p class="feat-author"><i class="bi bi-person me-1 opacity-50"></i>@book.Author</p>
+                        @if (!string.IsNullOrEmpty(book.Description))
+{
+                        <p class="feat-desc">
+                        @book.Description
+                         </p>
+}
+                    </div>
+                    <div class="feat-footer">
+                        @if (!User.Identity?.IsAuthenticated ?? true)
+                        {
+                            <a asp-controller="Auth" asp-action="Login" class="btn-feat-borrow btn-feat-ghost">
+                                <i class="bi bi-box-arrow-in-right me-1"></i>Login To Borrow
+                            </a>
+                        }
+                        else if (!available)
+                        {
+                            <button class="btn-feat-borrow btn-feat-unavail" disabled>
+                                <i class="bi bi-hourglass me-1"></i>Unavailable
+                            </button>
+                        }
+                        else
+                        {
+                            <form asp-controller="Borrow" asp-action="Borrow" method="post">
+                                @Html.AntiForgeryToken()
+                                <input type="hidden" name="bookId" value="@book.Id" />
+                                <input type="hidden" name="returnUrl" value="/" />
+                                <button type="submit" class="btn-feat-borrow">
+                                    <i class="bi bi-bookmark-plus me-1"></i>Borrow
+                                </button>
+                            </form>
+                        }
+                    </div>
+                </div>
+            }
+        </div>
+
+        <!-- Empty state (hidden by JS when cards are shown) -->
+        <div id="noBooksMsg" class="feat-empty d-none">
+            <i class="bi bi-bookshelf"></i>
+            <p>No books in this category yet.</p>
+        </div>
+
+    </div>
+</section>
+
+<!-- ══════════════════════════════════════════════════════
+     HOW IT WORKS
+══════════════════════════════════════════════════════════ -->
+<section class="how-section">
+    <div class="container">
+        <div class="text-center mb-5">
+            <p class="section-eyebrow">Simple Process</p>
+            <h2 class="section-title">How it works</h2>
+        </div>
+        <div class="row g-4 justify-content-center">
+            <div class="col-md-4 col-lg-3">
+                <div class="how-card">
+                    <div class="how-step">01</div>
+                    <div class="how-icon"><i class="bi bi-person-plus-fill"></i></div>
+                    <h4 class="how-title">Create Account</h4>
+                    <p class="how-body">Register for free and get instant access to our full library collection.</p>
+                </div>
+            </div>
+            <div class="col-md-4 col-lg-3">
+                <div class="how-card">
+                    <div class="how-step">02</div>
+                    <div class="how-icon how-icon--amber"><i class="bi bi-search"></i></div>
+                    <h4 class="how-title">Find a Book</h4>
+                    <p class="how-body">Search by title, author, or browse by category to find your next great read.</p>
+                </div>
+            </div>
+            <div class="col-md-4 col-lg-3">
+                <div class="how-card">
+                    <div class="how-step">03</div>
+                    <div class="how-icon how-icon--green"><i class="bi bi-bookmark-check-fill"></i></div>
+                    <h4 class="how-title">Borrow & Enjoy</h4>
+                    <p class="how-body">Borrow with one click, track your reading history, and return when done.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ══════════════════════════════════════════════════════
+     CTA BANNER
+══════════════════════════════════════════════════════════ -->
+@if (User.Identity?.IsAuthenticated != true)
+{
+    <section class="cta-section">
+        <div class="container">
+            <div class="cta-card">
+                <div class="cta-glow"></div>
+                <div class="cta-content">
+                    <h2 class="cta-title">Ready to start reading?</h2>
+                    <p class="cta-body">Join thousands of readers. Create your free account today.</p>
+                    <div class="d-flex gap-3 flex-wrap">
+                        <a asp-controller="Auth" asp-action="Register" class="btn-cta-primary">
+                            <i class="bi bi-person-plus me-2"></i>Create Free Account
+                        </a>
+                        <a asp-controller="Auth" asp-action="Login" class="btn-cta-ghost">
+                            Already have an account? Login
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+}
+
+@section Styles {
+<style>
+    /* ── Design tokens ───────────────────────────── */
+    :root {
+        --amber:      #c9813a;
+        --amber-dark: #a3641e;
+        --amber-lt:   #fdf0e0;
+        --ink:        #1c1410;
+        --ink-muted:  #6b5f54;
+        --cream:      #faf7f2;
+        --warm:       #f5efe4;
+        --border:     #e8dfd0;
+        --green:      #2d7a4f;
+        --green-lt:   #e6f5ed;
+        --blue:       #1d4ed8;
+        --blue-lt:    #dbeafe;
+        --purple-lt:  #ede9fe;
+        --purple:     #6d28d9;
+    }
+
+    /* ── Hero ────────────────────────────────────── */
+    .home-hero {
+        background: linear-gradient(135deg, #1c1410 0%, #2e1d0e 50%, #3d2810 100%);
+        padding: 5rem 0 5.5rem;
+        position: relative;
+        overflow: hidden;
+    }
+    .hero-bg-pattern {
+        position: absolute; inset: 0; pointer-events: none;
+        background-image:
+            radial-gradient(circle at 20% 50%, rgba(201,129,58,.12) 0%, transparent 50%),
+            radial-gradient(circle at 80% 20%, rgba(255,255,255,.04) 0%, transparent 40%);
+    }
+    .hero-inner { position: relative; z-index: 1; }
+    .hero-eyebrow {
+        display: inline-flex; align-items: center; gap: .5rem;
+        font-size: .72rem; font-weight: 700; letter-spacing: .12em;
+        text-transform: uppercase; color: var(--amber);
+        margin-bottom: 1.2rem;
+    }
+    .eyebrow-dot {
+        width: 6px; height: 6px; border-radius: 50%;
+        background: var(--amber); flex-shrink: 0;
+    }
+    .hero-heading {
+        font-family: 'Lora', serif;
+        font-size: clamp(2.2rem, 5vw, 3.6rem);
+        font-weight: 700; color: #fff; line-height: 1.18;
+        margin-bottom: 1.25rem; letter-spacing: -.02em;
+    }
+    .hero-heading em { font-style: italic; color: var(--amber); }
+    .hero-body { font-size: 1.05rem; color: #c8b89a; max-width: 500px; line-height: 1.65; margin-bottom: 2rem; }
+    .hero-cta-row { display: flex; gap: 1rem; flex-wrap: wrap; align-items: center; }
+
+    .btn-hero-primary {
+        background: var(--amber); color: #fff; border: none;
+        padding: .7rem 1.6rem; border-radius: 10px;
+        font-weight: 700; font-size: .95rem;
+        text-decoration: none;
+        transition: background .2s, transform .15s, box-shadow .2s;
+        box-shadow: 0 4px 20px rgba(201,129,58,.4);
+    }
+    .btn-hero-primary:hover { background: var(--amber-dark); color: #fff; transform: translateY(-2px); box-shadow: 0 8px 28px rgba(201,129,58,.45); }
+
+    .btn-hero-ghost {
+        color: #c8b89a; text-decoration: none;
+        font-weight: 600; font-size: .95rem;
+        padding: .7rem 1rem;
+        border-radius: 10px;
+        transition: color .2s, background .2s;
+    }
+    .btn-hero-ghost:hover { color: #fff; background: rgba(255,255,255,.08); }
+
+    /* Hero Visual */
+    .hero-visual { position: relative; width: 340px; height: 300px; }
+    .hero-orb {
+        position: absolute; top: 50%; left: 50%;
+        transform: translate(-50%,-50%);
+        width: 260px; height: 260px; border-radius: 50%;
+        background: radial-gradient(circle, rgba(201,129,58,.18) 0%, transparent 70%);
+    }
+    .hb {
+        position: absolute;
+        border-radius: 10px;
+        display: flex; align-items: center; justify-content: center;
+        font-size: 1.8rem;
+        box-shadow: 0 8px 24px rgba(0,0,0,.25);
+        animation: floatBook 4s ease-in-out infinite;
+    }
+    .hb-1 { width:90px;height:120px; top:20px; left:40px; background:#c9813a; color:#fff; animation-delay:0s; }
+    .hb-2 { width:80px;height:108px; top:10px; left:150px; background:#2d4a2d; color:#a3c9a3; animation-delay:.8s; }
+    .hb-3 { width:85px;height:114px; top:130px; left:80px; background:#1e3a5f; color:#93c5fd; animation-delay:1.6s; }
+    .hb-4 { width:75px;height:100px; top:120px; left:180px; background:#4a1e3a; color:#f0abfc; animation-delay=2.4s; }
+    @@keyframes floatBook {
+        0%,100% { transform: translateY(0); }
+        50%      { transform: translateY(-10px); }
+    }
+
+    /* ── Stats Strip ─────────────────────────────── */
+    .stats-strip {
+        background: #fff;
+        border-bottom: 1px solid var(--border);
+        padding: 1.75rem 0;
+    }
+    .stats-grid {
+        display: flex; align-items: center; justify-content: center;
+        flex-wrap: wrap; gap: 0;
+    }
+    .stat-item {
+        display: flex; flex-direction: column; align-items: center;
+        padding: .5rem 2.5rem;
+        text-align: center;
+    }
+    .stat-number {
+        font-family: 'Lora', serif;
+        font-size: 1.9rem; font-weight: 700; color: var(--ink);
+        line-height: 1;
+    }
+    .stat-plus { font-size: 1.2rem; color: var(--amber); }
+    .stat-label { font-size: .72rem; font-weight: 600; text-transform: uppercase; letter-spacing: .09em; color: var(--ink-muted); margin-top: .3rem; }
+    .stat-divider { width: 1px; height: 40px; background: var(--border); flex-shrink: 0; }
+    @@media (max-width: 576px) {
+        .stat-divider { display: none; }
+        .stat-item { padding: .5rem 1.25rem; }
+    }
+
+    /* ── Books Section ───────────────────────────── */
+    .books-section { padding: 5rem 0; background: var(--cream); }
+    .section-header-row {
+        display: flex; align-items: flex-end; justify-content: space-between;
+        flex-wrap: wrap; gap: 1rem; margin-bottom: 2rem;
+    }
+    .section-eyebrow {
+        font-size: .7rem; font-weight: 700; letter-spacing: .12em;
+        text-transform: uppercase; color: var(--amber); margin-bottom: .4rem;
+    }
+    .section-title {
+        font-family: 'Lora', serif; font-size: clamp(1.6rem,3vw,2.1rem);
+        font-weight: 700; color: var(--ink); margin: 0;
+    }
+    .btn-see-all {
+        font-size: .84rem; font-weight: 600; color: var(--amber);
+        text-decoration: none; padding: .4rem .9rem;
+        border: 1.5px solid var(--amber);
+        border-radius: 8px;
+        transition: background .2s, color .2s;
+        white-space: nowrap; align-self: center;
+    }
+    .btn-see-all:hover { background: var(--amber); color: #fff; }
+
+    /* Category pills */
+    .cat-filter-wrap {
+        overflow-x: auto;
+        padding-bottom: .5rem;
+        margin-bottom: 2rem;
+        -webkit-overflow-scrolling: touch;
+        scrollbar-width: none;
+    }
+    .cat-filter-wrap::-webkit-scrollbar { display: none; }
+    .cat-pills {
+        display: flex; gap: .5rem;
+        width: max-content;
+        min-width: 100%;
+    }
+    .cat-pill {
+        background: #fff; color: var(--ink-muted);
+        border: 1.5px solid var(--border);
+        border-radius: 24px; padding: .42rem 1.1rem;
+        font-size: .82rem; font-weight: 600;
+        cursor: pointer; white-space: nowrap;
+        transition: background .18s, color .18s, border-color .18s, box-shadow .18s;
+    }
+    .cat-pill:hover { border-color: var(--amber); color: var(--amber); background: var(--amber-lt); }
+    .cat-pill.active {
+        background: var(--ink); color: #fff; border-color: var(--ink);
+        box-shadow: 0 2px 10px rgba(28,20,16,.2);
+    }
+
+    /* Featured Cards Grid */
+    .feat-books-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(190px, 1fr));
+        gap: 1.25rem;
+    }
+    .feat-card {
+        background: #fff; border: 1px solid var(--border);
+        border-radius: 14px; overflow: hidden;
+        display: flex; flex-direction: column; height: 100%;
+        box-shadow: 0 2px 10px rgba(60,40,10,.07);
+        transition: transform .25s, box-shadow .25s, opacity .25s;
+    }
+    .feat-card:hover { transform: translateY(-4px); box-shadow: 0 10px 30px rgba(60,40,10,.13); }
+    .feat-card.hidden { display: none; }
+
+    /* Cover */
+    .feat-cover { position: relative; height: 230px; overflow: hidden; }
+    .feat-cover-img { width: 100%; height: 100%; object-fit: cover; transition: transform .4s; }
+    .feat-card:hover .feat-cover-img { transform: scale(1.05); }
+    .feat-cover-ph {
+        width: 100%; height: 100%;
+        display: flex; flex-direction: column; align-items: center; justify-content: center;
+        gap: .5rem; font-size: 2rem;
+    }
+    .feat-cover-cat-label { font-size: .68rem; font-weight: 700; letter-spacing: .07em; text-transform: uppercase; }
+    .ph-novels    { background: linear-gradient(135deg,#2d1b0e,#5a3010); color: #e8a84a; }
+    .ph-programming { background: linear-gradient(135deg,#1a2e1a,#2d5a2d); color: #6ee78e; }
+    .ph-science    { background: linear-gradient(135deg,#0d1f3c,#1a3a6b); color: #60a5fa; }
+    .ph-history    { background: linear-gradient(135deg,#2e1b0e,#6b3510); color: #fbbf24; }
+    .ph-business { background: linear-gradient(135deg,#0f1a2e,#1e3a5f); color: #38bdf8; }
+    .ph-religion      { background: linear-gradient(135deg,#2e0d1f,#6b1a3a); color: #f0abfc; }
+    .ph-other      { background: linear-gradient(135deg,#1a1a1a,#3a3a3a); color: #cbd5e1; }
+
+    .feat-ribbon {
+        position: absolute; top: 10px; right: -22px;
+        font-size: .62rem; font-weight: 700; letter-spacing: .06em;
+        text-transform: uppercase; padding: .2em 1.8em;
+        transform: rotate(35deg);
+        box-shadow: 0 2px 6px rgba(0,0,0,.2);
+    }
+    .feat-ribbon--out { background: #dc2626; color: #fff; }
+    .feat-ribbon--low { background: var(--amber); color: #fff; }
+
+    /* Card body */
+    .feat-body { padding: .75rem 1rem .35rem; flex: 1;
+    display: flex;
+    flex-direction: column; }
+    .feat-cat-tag {
+        display: inline-block; font-size: .65rem; font-weight: 700;
+        text-transform: uppercase; letter-spacing: .06em;
+        background: var(--amber-lt); color: var(--amber);
+        padding: .15em .6em; border-radius: 20px; margin-bottom: .4rem;
+    }
+    .feat-title {
+        font-family: 'Lora', serif; font-size: .9rem; font-weight: 600;
+        color: var(--ink); margin-bottom: .25rem;
+        display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden;
+    }
+    .feat-author { font-size: .76rem; color: var(--ink-muted); margin: 0; }
+    .feat-desc {
+    font-size: .72rem;
+    color: var(--ink-muted);
+    line-height: 1.5;
+
+    margin-top: .4rem;
+
+    display: -webkit-box;
+    -webkit-line-clamp: 2;   /* عدد الأسطر */
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    min-height: 2.2rem;
+}
+    /* Card footer */
+    .feat-footer { padding: .7rem 1rem .9rem; border-top: 1px solid #f3ede4; }
+    .btn-feat-borrow {
+        display: block; width: 100%; text-align: center;
+        background: var(--ink); color: #fff; border: none;
+        border-radius: 8px; padding: .45rem .5rem;
+        font-size: .8rem; font-weight: 600; cursor: pointer;
+        text-decoration: none;
+        transition: background .2s, transform .12s;
+    }
+    .btn-feat-borrow:hover { background: #3a2510; color: #fff; transform: translateY(-1px); }
+    .btn-feat-ghost { background: transparent; color: var(--amber); border: 1.5px solid var(--amber); }
+    .btn-feat-ghost:hover { background: var(--amber-lt); color: var(--amber); transform: none; }
+    .btn-feat-unavail { background: #e8e0d6; color: #a89880; cursor: not-allowed; }
+    .btn-feat-unavail:hover { background: #e8e0d6; transform: none; }
+
+    /* Empty */
+    .feat-empty { text-align: center; padding: 4rem 1rem; color: var(--ink-muted); }
+    .feat-empty i { font-size: 3rem; opacity: .3; display: block; margin-bottom: 1rem; }
+
+    /* ── How it works ────────────────────────────── */
+    .how-section {
+        padding: 5rem 0;
+        background: var(--warm);
+        border-top: 1px solid var(--border);
+        border-bottom: 1px solid var(--border);
+    }
+    .how-card {
+        background: #fff; border: 1px solid var(--border); border-radius: 16px;
+        padding: 2rem 1.5rem; text-align: center;
+        box-shadow: 0 2px 12px rgba(60,40,10,.06);
+        transition: transform .2s, box-shadow .2s;
+        height: 100%;
+    }
+    .how-card:hover { transform: translateY(-3px); box-shadow: 0 8px 28px rgba(60,40,10,.1); }
+    .how-step {
+        font-family: 'Lora', serif; font-size: 3rem; font-weight: 700;
+        color: #ede8df; line-height: 1; margin-bottom: 1rem;
+    }
+    .how-icon {
+        width: 56px; height: 56px; border-radius: 14px;
+        background: var(--ink); color: var(--amber);
+        display: flex; align-items: center; justify-content: center;
+        font-size: 1.4rem; margin: 0 auto 1.25rem;
+    }
+    .how-icon--amber { background: var(--amber); color: #fff; }
+    .how-icon--green { background: var(--green); color: #fff; }
+    .how-title { font-family: 'Lora', serif; font-size: 1.05rem; font-weight: 600; color: var(--ink); margin-bottom: .5rem; }
+    .how-body { font-size: .85rem; color: var(--ink-muted); line-height: 1.6; margin: 0; }
+
+    /* ── CTA Section ─────────────────────────────── */
+    .cta-section { padding: 4.5rem 0; background: var(--cream); }
+    .cta-card {
+        background: linear-gradient(135deg, #1c1410 0%, #2e1d0e 100%);
+        border-radius: 20px; padding: 3rem 2.5rem;
+        position: relative; overflow: hidden;
+    }
+    .cta-glow {
+        position: absolute; top: -60px; right: -60px;
+        width: 240px; height: 240px; border-radius: 50%;
+        background: radial-gradient(circle, rgba(201,129,58,.25) 0%, transparent 70%);
+        pointer-events: none;
+    }
+    .cta-content { position: relative; z-index: 1; }
+    .cta-title {
+        font-family: 'Lora', serif; font-size: clamp(1.6rem,3vw,2.2rem);
+        font-weight: 700; color: #fff; margin-bottom: .75rem;
+    }
+    .cta-body { color: #c8b89a; margin-bottom: 1.75rem; font-size: 1rem; max-width: 500px; }
+    .btn-cta-primary {
+        background: var(--amber); color: #fff; border: none;
+        padding: .65rem 1.5rem; border-radius: 10px;
+        font-weight: 700; font-size: .95rem; text-decoration: none;
+        transition: background .2s, transform .15s;
+    }
+    .btn-cta-primary:hover { background: var(--amber-dark); color: #fff; transform: translateY(-1px); }
+    .btn-cta-ghost {
+        color: #c8b89a; text-decoration: none; font-size: .9rem; font-weight: 600;
+        padding: .65rem 1rem; border-radius: 10px;
+        transition: color .2s, background .2s;
+    }
+    .btn-cta-ghost:hover { color: #fff; background: rgba(255,255,255,.08); }
+
+    /* Responsive */
+    @@media (max-width: 576px) {
+        .home-hero { padding: 3.5rem 0 4rem; }
+        .feat-books-grid { grid-template-columns: repeat(auto-fill, minmax(155px, 1fr)); }
+        .feat-cover { height: 155px; }
+        .cta-card { padding: 2rem 1.5rem; }
+    }
+</style>
+}
+
+@section Scripts {
+<script>
+(function () {
+    const pills  = document.querySelectorAll('.cat-pill');
+    const cards  = document.querySelectorAll('.feat-card');
+    const emptyMsg = document.getElementById('noBooksMsg');
+
+    function filterCards(category) {
+        let visible = 0;
+        cards.forEach(card => {
+            const match = category === 'all' || card.dataset.category === category;
+            card.classList.toggle('hidden', !match);
+            if (match) visible++;
+        });
+        emptyMsg.classList.toggle('d-none', visible > 0);
+    }
+
+    pills.forEach(pill => {
+        pill.addEventListener('click', function () {
+            pills.forEach(p => p.classList.remove('active'));
+            this.classList.add('active');
+            filterCards(this.dataset.category);
+        });
+    });
+
+    // Start on "All"
+    filterCards('all');
+})();
+</script>
+}
+
+@functions {
+    string GetCoverClass(Category cat) => cat switch {
+        Category.Novels     => "feat-cover-ph ph-novels",
+        Category.Programming => "feat-cover-ph ph-programming",
+        Category.Science     => "feat-cover-ph ph-science",
+        Category.History     => "feat-cover-ph ph-history",
+        Category.Business  => "feat-cover-ph ph-business",
+        Category.Religion    => "feat-cover-ph ph-religion",
+        _                    => "feat-cover-ph ph-other"
+    };
+
+    string GetCategoryIcon(Category cat) => cat switch {
+        Category.Novels      => "📖",
+        Category.Programming => "💻",
+        Category.Science     => "🔬",
+        Category.History     => "🏛️",
+        Category.Business    => "💼",
+        Category.Religion    => "🕌",
+        _                    => "📚"
+    };
+}

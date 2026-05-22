@@ -1,0 +1,79 @@
+@model Library.BLL.ModelVM.Admin.UserBorrowHistoryVM
+
+@{
+    var records = Model.History?.ToList() ?? new List<Library.BLL.ModelVM.Admin.BorrowRecordRowVM>();
+    var active  = records.Count(r => !r.IsReturned);
+}
+
+<!-- Summary strip -->
+<div class="d-flex gap-3 p-3 border-bottom" style="background:#fdf9f5;flex-wrap:wrap">
+    <div style="font-size:.82rem">
+        <span style="font-size:.66rem;font-weight:700;text-transform:uppercase;letter-spacing:.1em;color:var(--muted)">Total Borrows</span>
+        <div style="font-family:'Lora',serif;font-size:1.4rem;font-weight:700;color:var(--ink);line-height:1">@records.Count</div>
+    </div>
+    <div style="width:1px;background:var(--border)"></div>
+    <div style="font-size:.82rem">
+        <span style="font-size:.66rem;font-weight:700;text-transform:uppercase;letter-spacing:.1em;color:var(--muted)">Active Loans</span>
+        <div style="font-family:'Lora',serif;font-size:1.4rem;font-weight:700;color:var(--amber);line-height:1">@active</div>
+    </div>
+    <div style="width:1px;background:var(--border)"></div>
+    <div style="font-size:.82rem">
+        <span style="font-size:.66rem;font-weight:700;text-transform:uppercase;letter-spacing:.1em;color:var(--muted)">Returned</span>
+        <div style="font-family:'Lora',serif;font-size:1.4rem;font-weight:700;color:var(--green);line-height:1">@(records.Count - active)</div>
+    </div>
+    <div class="ms-auto align-self-center" style="font-size:.8rem;color:var(--muted)">
+        <i class="bi bi-envelope me-1"></i>@Model.Email
+    </div>
+</div>
+
+@if (!records.Any())
+{
+    <div class="text-center py-5 text-muted">
+        <i class="bi bi-bookmark" style="font-size:2.5rem;opacity:.2;display:block;margin-bottom:.75rem"></i>
+        This user has no borrow history.
+    </div>
+}
+else
+{
+    <div class="table-responsive">
+        <table class="admin-table">
+            <thead>
+                <tr>
+                    <th style="width:50px">Cover</th>
+                    <th>Book</th>
+                    <th>Borrowed</th>
+                    <th>Returned</th>
+                    <th class="text-center">Days</th>
+                    <th class="text-center">Status</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var r in records)
+                {
+                    <tr>
+                        <td>
+                            @if (!string.IsNullOrEmpty(r.BookImage))
+                            { <img src="~/files/@r.BookImage" class="row-thumb" alt="@r.BookTitle" /> }
+                            else
+                            { <div class="row-thumb-ph"><i class="bi bi-book"></i></div> }
+                        </td>
+                        <td class="fw-semibold" style="font-size:.875rem">@r.BookTitle</td>
+                        <td style="font-size:.82rem;color:var(--muted)">@r.BorrowDate.ToString("dd MMM yyyy")</td>
+                        <td style="font-size:.82rem;color:var(--muted)">
+                            @(r.ReturnDate.HasValue ? r.ReturnDate.Value.ToString("dd MMM yyyy") : "—")
+                        </td>
+                        <td class="text-center" style="font-size:.8rem;color:@(r.IsLate ? "var(--red)" : "var(--muted)")">@r.DaysOut d</td>
+                        <td class="text-center">
+                            @if (r.IsReturned)
+                            { <span class="badge-returned">Returned</span> }
+                            else if (r.IsLate)
+                            { <span class="badge-late">Late</span> }
+                            else
+                            { <span class="badge-active">Active</span> }
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+}
